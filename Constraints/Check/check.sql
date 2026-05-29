@@ -2,7 +2,7 @@
 -- CHECK - Validacao de Valores
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- DESCRIÇÃO:
 -- A constraint CHECK limita os valores que podem ser inseridos em uma coluna,
 -- baseado em uma condicao logica. E util para garantir integridade de dados
 -- em nivel de banco de dados.
