@@ -2,7 +2,7 @@
 -- COMANDO: INSERT
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- O comando INSERT é usado para adicionar novos registros
 -- (linhas) em uma tabela do banco de dados.
 -- É um comando DML (Data Manipulation Language).
