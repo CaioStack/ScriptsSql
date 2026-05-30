@@ -2,12 +2,12 @@
 -- AS - Alias (Apelidos)
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- Descrição:
 -- A palavra-chave AS e usada para criar ALIASES (apelidos) para colunas e
 -- tabelas. Aliases tornam os resultados mais legiveis e sao essenciais em
 -- JOINs e subconsultas. A palavra AS e opcional na maioria dos SGBDs.
 --
--- USOS:
+-- Usos:
 -- - Renomear colunas no resultado
 -- - Dar nomes significativos a expressoes calculadas
 -- - Abreviar nomes de tabelas em JOINs
@@ -16,7 +16,7 @@
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 1: Alias de coluna
+-- Exemplo 1: Alias de coluna
 -- ----------------------------------------------------------------------------
 
 SELECT 
@@ -31,7 +31,7 @@ FROM clientes;
 -- | Maria | Silva                | maria@email.com   |
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 2: Alias para expressoes
+-- Exemplo 2: Alias para expressoes
 -- ----------------------------------------------------------------------------
 
 SELECT 
@@ -43,7 +43,7 @@ SELECT
 FROM itens_pedido;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 3: Alias de tabela (essencial para JOINs)
+-- Exemplo 3: Alias de tabela (essencial para JOINs)
 -- ----------------------------------------------------------------------------
 
 SELECT 
@@ -57,7 +57,7 @@ INNER JOIN pedidos p ON c.id = p.cliente_id;
 -- clientes.nome, pedidos.id, etc.
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 4: Alias obrigatorio em SELF JOIN
+-- Exemplo 4: Alias obrigatorio em SELF JOIN
 -- ----------------------------------------------------------------------------
 
 SELECT 
@@ -69,7 +69,7 @@ LEFT JOIN funcionarios g ON f.gerente_id = g.id;
 -- Mesma tabela referenciada duas vezes - alias obrigatorio
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 5: Alias em subquery
+-- Exemplo 5: Alias em subquery
 -- ----------------------------------------------------------------------------
 
 SELECT 
@@ -87,7 +87,7 @@ FROM (
 WHERE total_vendas > 10000;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 6: Alias com espacos ou caracteres especiais
+-- Exemplo 6: Alias com espacos ou caracteres especiais
 -- ----------------------------------------------------------------------------
 
 -- Use aspas duplas ou colchetes para nomes especiais:
@@ -102,7 +102,7 @@ SELECT nome AS "Nome do Cliente", email AS "E-mail" FROM clientes;
 SELECT nome AS [Nome do Cliente], email AS [E-mail] FROM clientes;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 7: AS e opcional
+-- Exemplo 7: AS e opcional
 -- ----------------------------------------------------------------------------
 
 -- Com AS (explicito):
@@ -114,7 +114,7 @@ SELECT nome cliente_nome FROM clientes;
 -- Ambos funcionam, mas AS e mais legivel
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 8: Alias em funcoes agregadas
+-- Exemplo 8: Alias em funcoes agregadas
 -- ----------------------------------------------------------------------------
 
 SELECT 
@@ -128,7 +128,7 @@ FROM produtos
 GROUP BY categoria;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 9: Alias para diferenciar colunas ambiguas
+-- Exemplo 9: Alias para diferenciar colunas ambiguas
 -- ----------------------------------------------------------------------------
 
 SELECT 
@@ -142,7 +142,7 @@ INNER JOIN pedidos p ON c.id = p.cliente_id;
 -- Sem alias, haveria ambiguidade em 'id' e 'nome'
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 10: Alias usado em ORDER BY
+-- Exemplo 10: Alias usado em ORDER BY
 -- ----------------------------------------------------------------------------
 
 SELECT 
