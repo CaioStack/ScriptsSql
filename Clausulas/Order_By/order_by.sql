@@ -1,27 +1,27 @@
 -- ============================================
--- CLÁUSULA: ORDER BY
+-- Claúsula: ORDER BY
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A cláusula ORDER BY é usada para ordenar os resultados
 -- de uma consulta em ordem crescente (ASC) ou decrescente (DESC).
 -- Por padrão, a ordenação é crescente (ASC).
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- SELECT colunas FROM tabela
 -- ORDER BY coluna [ASC|DESC];
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Ordenação crescente (padrão)
+-- Exemplo 1: Ordenação crescente (padrão)
 -- ============================================
 -- ASC é opcional, pois é o padrão
 SELECT * FROM clientes ORDER BY nome;
 SELECT * FROM clientes ORDER BY nome ASC;
 
 -- ============================================
--- EXEMPLO 2: Ordenação decrescente
+-- Exemplo 2: Ordenação decrescente
 -- ============================================
 SELECT * FROM produtos ORDER BY preco DESC;
 
@@ -29,7 +29,7 @@ SELECT * FROM produtos ORDER BY preco DESC;
 SELECT * FROM produtos ORDER BY data_cadastro DESC;
 
 -- ============================================
--- EXEMPLO 3: Ordenar por múltiplas colunas
+-- Exemplo 3: Ordenar por múltiplas colunas
 -- ============================================
 -- Primeiro por categoria (A-Z), depois por preço (maior para menor)
 SELECT * FROM produtos
@@ -40,14 +40,14 @@ SELECT * FROM clientes
 ORDER BY estado, cidade, nome;
 
 -- ============================================
--- EXEMPLO 4: Ordenar por posição da coluna
+-- Exemplo 4: Ordenar por posição da coluna
 -- ============================================
 -- Ordena pela segunda coluna do SELECT
 SELECT nome, preco, estoque FROM produtos
 ORDER BY 2 DESC;  -- Ordena por preco
 
 -- ============================================
--- EXEMPLO 5: Ordenar por alias
+-- Exemplo 5: Ordenar por alias
 -- ============================================
 SELECT 
     nome,
@@ -56,7 +56,7 @@ FROM itens_pedido
 ORDER BY valor_total DESC;
 
 -- ============================================
--- EXEMPLO 6: Ordenar por expressão
+-- Exemplo 6: Ordenar por expressão
 -- ============================================
 -- Ordenar pelo comprimento do nome
 SELECT * FROM clientes
@@ -67,14 +67,14 @@ SELECT * FROM clientes
 ORDER BY YEAR(data_nascimento);
 
 -- ============================================
--- EXEMPLO 7: ORDER BY com WHERE
+-- Exemplo 7: ORDER BY com WHERE
 -- ============================================
 SELECT * FROM produtos
 WHERE categoria = 'Eletrônicos'
 ORDER BY preco DESC;
 
 -- ============================================
--- EXEMPLO 8: ORDER BY com LIMIT
+-- Exemplo 8: ORDER BY com LIMIT
 -- ============================================
 -- Top 5 produtos mais caros
 SELECT * FROM produtos
@@ -87,7 +87,7 @@ ORDER BY data_cadastro DESC
 LIMIT 10;
 
 -- ============================================
--- EXEMPLO 9: ORDER BY com NULL
+-- Exemplo 9: ORDER BY com NULL
 -- ============================================
 -- Por padrão, NULLs aparecem primeiro (ASC) ou último (DESC)
 
@@ -103,7 +103,7 @@ SELECT * FROM clientes
 ORDER BY telefone DESC NULLS FIRST;
 
 -- ============================================
--- EXEMPLO 10: ORDER BY com CASE
+-- Exemplo 10: ORDER BY com CASE
 -- ============================================
 -- Ordenação personalizada
 SELECT * FROM pedidos
@@ -115,14 +115,14 @@ ORDER BY CASE status
 END;
 
 -- ============================================
--- EXEMPLO 11: ORDER BY com FIELD (MySQL)
+-- Exemplo 11: ORDER BY com FIELD (MySQL)
 -- ============================================
 -- Ordenação em ordem específica
 SELECT * FROM pedidos
 ORDER BY FIELD(status, 'urgente', 'normal', 'baixa', 'concluido');
 
 -- ============================================
--- EXEMPLO 12: Ordenação aleatória
+-- Exemplo 12: Ordenação aleatória
 -- ============================================
 -- MySQL
 SELECT * FROM produtos ORDER BY RAND() LIMIT 5;
