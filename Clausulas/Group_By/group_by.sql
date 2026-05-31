@@ -1,14 +1,14 @@
 -- ============================================
--- CLÁUSULA: GROUP BY
+-- Claúsula: GROUP BY
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A cláusula GROUP BY agrupa linhas que têm o mesmo valor
 -- em colunas especificadas. É frequentemente usada com
 -- funções de agregação (COUNT, SUM, AVG, MAX, MIN) para
 -- realizar cálculos em cada grupo.
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- SELECT coluna, função_agregação(coluna)
 -- FROM tabela
 -- GROUP BY coluna;
@@ -16,7 +16,7 @@
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Contagem por grupo
+-- Exemplo 1: Contagem por grupo
 -- ============================================
 -- Quantos clientes por cidade
 SELECT cidade, COUNT(*) AS total_clientes
@@ -24,7 +24,7 @@ FROM clientes
 GROUP BY cidade;
 
 -- ============================================
--- EXEMPLO 2: Soma por grupo
+-- Exemplo 2: Soma por grupo
 -- ============================================
 -- Total de vendas por categoria
 SELECT categoria, SUM(preco * quantidade) AS total_vendas
@@ -33,7 +33,7 @@ JOIN produtos p ON ip.produto_id = p.id
 GROUP BY categoria;
 
 -- ============================================
--- EXEMPLO 3: Média por grupo
+-- Exemplo 3: Média por grupo
 -- ============================================
 -- Preço médio por categoria
 SELECT categoria, AVG(preco) AS preco_medio
@@ -41,7 +41,7 @@ FROM produtos
 GROUP BY categoria;
 
 -- ============================================
--- EXEMPLO 4: Múltiplas funções de agregação
+-- Exemplo 4: Múltiplas funções de agregação
 -- ============================================
 SELECT 
     categoria,
@@ -54,7 +54,7 @@ FROM produtos
 GROUP BY categoria;
 
 -- ============================================
--- EXEMPLO 5: GROUP BY com múltiplas colunas
+-- Exemplo 5: GROUP BY com múltiplas colunas
 -- ============================================
 -- Vendas por estado e cidade
 SELECT estado, cidade, COUNT(*) AS total_clientes
@@ -62,7 +62,7 @@ FROM clientes
 GROUP BY estado, cidade;
 
 -- ============================================
--- EXEMPLO 6: GROUP BY com ORDER BY
+-- Exemplo 6: GROUP BY com ORDER BY
 -- ============================================
 -- Categorias ordenadas por total de vendas
 SELECT categoria, SUM(preco * quantidade) AS total_vendas
@@ -72,7 +72,7 @@ GROUP BY categoria
 ORDER BY total_vendas DESC;
 
 -- ============================================
--- EXEMPLO 7: GROUP BY com WHERE
+-- Exemplo 7: GROUP BY com WHERE
 -- ============================================
 -- Total de vendas por categoria (apenas produtos ativos)
 SELECT categoria, SUM(preco * quantidade) AS total_vendas
@@ -82,7 +82,7 @@ WHERE p.ativo = TRUE
 GROUP BY categoria;
 
 -- ============================================
--- EXEMPLO 8: GROUP BY com HAVING
+-- Exemplo 8: GROUP BY com HAVING
 -- ============================================
 -- HAVING filtra os grupos (diferente de WHERE que filtra linhas)
 SELECT categoria, COUNT(*) AS total_produtos
@@ -91,7 +91,7 @@ GROUP BY categoria
 HAVING COUNT(*) > 10;
 
 -- ============================================
--- EXEMPLO 9: GROUP BY por data
+-- Exemplo 9: GROUP BY por data
 -- ============================================
 -- Vendas por dia
 SELECT DATE(data_pedido) AS dia, COUNT(*) AS total_pedidos
@@ -107,7 +107,7 @@ FROM pedidos
 GROUP BY YEAR(data_pedido), MONTH(data_pedido);
 
 -- ============================================
--- EXEMPLO 10: GROUP BY com CASE
+-- Exemplo 10: GROUP BY com CASE
 -- ============================================
 -- Agrupar por faixa de preço
 SELECT 
@@ -125,7 +125,7 @@ GROUP BY CASE
 END;
 
 -- ============================================
--- EXEMPLO 11: GROUP BY com ROLLUP (MySQL)
+-- Exemplo 11: GROUP BY com ROLLUP (MySQL)
 -- ============================================
 -- Adiciona linha de total geral
 SELECT categoria, SUM(preco) AS total
@@ -133,7 +133,7 @@ FROM produtos
 GROUP BY categoria WITH ROLLUP;
 
 -- ============================================
--- EXEMPLO 12: GROUP BY ALL (PostgreSQL 15+)
+-- Exemplo 12: GROUP BY ALL (PostgreSQL 15+)
 -- ============================================
 -- Agrupa automaticamente por todas as colunas não agregadas
 SELECT categoria, COUNT(*)
