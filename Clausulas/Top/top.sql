@@ -1,25 +1,25 @@
 -- ============================================
--- CLÁUSULA: TOP
+-- Claúsula: TOP
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A cláusula TOP é usada no SQL Server para limitar o número
 -- de registros retornados por uma consulta. É equivalente
 -- ao LIMIT usado no MySQL e PostgreSQL.
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- SELECT TOP quantidade colunas FROM tabela;
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Selecionar os primeiros N registros
+-- Exemplo 1: Selecionar os primeiros N registros
 -- ============================================
 -- Retornar os 10 primeiros clientes
 SELECT TOP 10 * FROM clientes;
 
 -- ============================================
--- EXEMPLO 2: TOP com ORDER BY
+-- Exemplo 2: TOP com ORDER BY
 -- ============================================
 -- Os 5 produtos mais caros
 SELECT TOP 5 * FROM produtos
@@ -30,7 +30,7 @@ SELECT TOP 10 * FROM pedidos
 ORDER BY data_pedido DESC;
 
 -- ============================================
--- EXEMPLO 3: TOP com porcentagem
+-- Exemplo 3: TOP com porcentagem
 -- ============================================
 -- Retorna 10% dos registros
 SELECT TOP 10 PERCENT * FROM clientes;
@@ -40,7 +40,7 @@ SELECT TOP 5 PERCENT * FROM produtos
 ORDER BY quantidade_vendida DESC;
 
 -- ============================================
--- EXEMPLO 4: TOP com WITH TIES
+-- Exemplo 4: TOP com WITH TIES
 -- ============================================
 -- WITH TIES inclui registros empatados
 -- Os 3 produtos mais caros (incluindo empates)
@@ -52,7 +52,7 @@ ORDER BY preco DESC;
 -- ambos serão retornados (totalizando 4 registros)
 
 -- ============================================
--- EXEMPLO 5: TOP com WHERE
+-- Exemplo 5: TOP com WHERE
 -- ============================================
 -- Os 5 produtos mais baratos da categoria Eletrônicos
 SELECT TOP 5 * FROM produtos
@@ -60,7 +60,7 @@ WHERE categoria = 'Eletrônicos'
 ORDER BY preco ASC;
 
 -- ============================================
--- EXEMPLO 6: TOP com JOIN
+-- Exemplo 6: TOP com JOIN
 -- ============================================
 -- Os 10 maiores pedidos com nome do cliente
 SELECT TOP 10 
@@ -72,7 +72,7 @@ INNER JOIN clientes c ON p.cliente_id = c.id
 ORDER BY p.valor_total DESC;
 
 -- ============================================
--- EXEMPLO 7: TOP em subquery
+-- Exemplo 7: TOP em subquery
 -- ============================================
 -- Clientes que fizeram os 5 maiores pedidos
 SELECT * FROM clientes
@@ -82,7 +82,7 @@ WHERE id IN (
 );
 
 -- ============================================
--- EXEMPLO 8: TOP com GROUP BY
+-- Exemplo 8: TOP com GROUP BY
 -- ============================================
 -- As 5 categorias com mais produtos
 SELECT TOP 5 categoria, COUNT(*) AS total
@@ -107,7 +107,7 @@ ORDER BY total DESC;
 -- FETCH NEXT 10 ROWS ONLY;
 
 -- ============================================
--- EXEMPLO 9: Paginação com OFFSET FETCH (SQL Server 2012+)
+-- Exemplo 9: Paginação com OFFSET FETCH (SQL Server 2012+)
 -- ============================================
 -- Página 1: registros 1-10
 SELECT * FROM produtos
@@ -122,14 +122,14 @@ OFFSET 10 ROWS
 FETCH NEXT 10 ROWS ONLY;
 
 -- ============================================
--- EXEMPLO 10: TOP com DELETE
+-- Exemplo 10: TOP com DELETE
 -- ============================================
 -- Deletar os 100 registros mais antigos
 DELETE TOP (100) FROM logs
 WHERE data_criacao < '2023-01-01';
 
 -- ============================================
--- EXEMPLO 11: TOP com UPDATE
+-- Exemplo 11: TOP com UPDATE
 -- ============================================
 -- Atualizar os 10 primeiros registros encontrados
 UPDATE TOP (10) produtos
