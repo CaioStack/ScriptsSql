@@ -2,17 +2,17 @@
 -- CLÁUSULA: DISTINCT
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A cláusula DISTINCT é usada para remover registros duplicados
 -- dos resultados de uma consulta, retornando apenas valores únicos.
 --
--- SINTAXE BÁSICA:
+-- Sinrtaxe básica:
 -- SELECT DISTINCT coluna FROM tabela;
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Valores únicos de uma coluna
+-- Exemplo 1: Valores únicos de uma coluna
 -- ============================================
 -- Lista todas as cidades (sem repetição)
 SELECT DISTINCT cidade FROM clientes;
@@ -21,7 +21,7 @@ SELECT DISTINCT cidade FROM clientes;
 SELECT DISTINCT categoria FROM produtos;
 
 -- ============================================
--- EXEMPLO 2: DISTINCT com múltiplas colunas
+-- Exemplo 2: DISTINCT com múltiplas colunas
 -- ============================================
 -- Combinações únicas de cidade e estado
 SELECT DISTINCT cidade, estado FROM clientes;
@@ -30,21 +30,21 @@ SELECT DISTINCT cidade, estado FROM clientes;
 SELECT DISTINCT categoria, marca FROM produtos;
 
 -- ============================================
--- EXEMPLO 3: DISTINCT com ORDER BY
+-- Exemplo 3: DISTINCT com ORDER BY
 -- ============================================
 -- Cidades únicas ordenadas alfabeticamente
 SELECT DISTINCT cidade FROM clientes
 ORDER BY cidade;
 
 -- ============================================
--- EXEMPLO 4: DISTINCT com WHERE
+-- Exemplo 4: DISTINCT com WHERE
 -- ============================================
 -- Categorias únicas de produtos ativos
 SELECT DISTINCT categoria FROM produtos
 WHERE ativo = TRUE;
 
 -- ============================================
--- EXEMPLO 5: COUNT com DISTINCT
+-- Exemplo 5: COUNT com DISTINCT
 -- ============================================
 -- Quantas cidades diferentes têm clientes
 SELECT COUNT(DISTINCT cidade) AS total_cidades
@@ -55,7 +55,7 @@ SELECT COUNT(DISTINCT cliente_id) AS clientes_com_pedidos
 FROM pedidos;
 
 -- ============================================
--- EXEMPLO 6: DISTINCT vs GROUP BY
+-- Exemplo 6: DISTINCT vs GROUP BY
 -- ============================================
 -- Ambos retornam o mesmo resultado neste caso:
 
@@ -69,20 +69,20 @@ SELECT categoria FROM produtos GROUP BY categoria;
 SELECT categoria, COUNT(*) FROM produtos GROUP BY categoria;
 
 -- ============================================
--- EXEMPLO 7: DISTINCT com NULL
+-- Exemplo 7: DISTINCT com NULL
 -- ============================================
 -- DISTINCT considera NULL como um valor único
 SELECT DISTINCT telefone FROM clientes;
 -- Se houver vários registros com NULL, apenas um NULL aparecerá
 
 -- ============================================
--- EXEMPLO 8: DISTINCT em todas as colunas
+-- Exemplo 8: DISTINCT em todas as colunas
 -- ============================================
 -- Linhas completamente únicas
 SELECT DISTINCT * FROM logs;
 
 -- ============================================
--- EXEMPLO 9: DISTINCT com JOIN
+-- Exemplo 9: DISTINCT com JOIN
 -- ============================================
 -- Clientes que já fizeram pedidos (sem repetição)
 SELECT DISTINCT c.id, c.nome
@@ -90,7 +90,7 @@ FROM clientes c
 INNER JOIN pedidos p ON c.id = p.cliente_id;
 
 -- ============================================
--- EXEMPLO 10: DISTINCT ON (PostgreSQL)
+-- Exemplo 10: DISTINCT ON (PostgreSQL)
 -- ============================================
 -- Retorna a primeira linha de cada grupo
 -- SELECT DISTINCT ON (categoria) categoria, nome, preco
@@ -99,7 +99,7 @@ INNER JOIN pedidos p ON c.id = p.cliente_id;
 -- Retorna o produto mais caro de cada categoria
 
 -- ============================================
--- EXEMPLO 11: SUM, AVG com DISTINCT
+-- Exemplo 11: SUM, AVG com DISTINCT
 -- ============================================
 -- Soma apenas valores únicos
 SELECT SUM(DISTINCT preco) AS soma_precos_unicos
@@ -110,7 +110,7 @@ SELECT AVG(DISTINCT preco) AS media_precos_unicos
 FROM produtos;
 
 -- ============================================
--- EXEMPLO 12: Verificar duplicatas
+-- Exemplo 12: Verificar duplicatas
 -- ============================================
 -- Encontrar emails duplicados
 SELECT email, COUNT(*) AS quantidade
