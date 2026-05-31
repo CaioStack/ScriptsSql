@@ -1,30 +1,32 @@
 -- ============================================
--- CLÁUSULA: LIMIT
+-- Claúsula: LIMIT
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A cláusula LIMIT é usada para limitar o número de registros
 -- retornados por uma consulta. É muito útil para paginação
 -- e para obter os primeiros N resultados.
 -- 
--- NOTA: A sintaxe varia entre SGBDs:
+-- Nota: A sintaxe varia entre SGBDs:
 -- - MySQL/PostgreSQL: LIMIT
 -- - SQL Server: TOP
 -- - Oracle: ROWNUM ou FETCH FIRST
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- SELECT colunas FROM tabela LIMIT quantidade;
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Limitar quantidade de resultados
+-- Exemplo 1: Limitar quantidade de resultados
 -- ============================================
 -- Retornar apenas os 10 primeiros registros
-SELECT * FROM clientes LIMIT 10;
+SELECT * FROM clientes
+ORDER BY id
+LIMIT 10;
 
 -- ============================================
--- EXEMPLO 2: LIMIT com ORDER BY
+-- Exemplo 2: LIMIT com ORDER BY
 -- ============================================
 -- Top 5 produtos mais caros
 SELECT * FROM produtos
@@ -37,7 +39,7 @@ ORDER BY data_cadastro DESC
 LIMIT 10;
 
 -- ============================================
--- EXEMPLO 3: LIMIT com OFFSET (paginação)
+-- Exemplo 3: LIMIT com OFFSET (paginação)
 -- ============================================
 -- OFFSET indica quantos registros pular
 
@@ -51,13 +53,13 @@ SELECT * FROM produtos ORDER BY id LIMIT 10 OFFSET 10;
 SELECT * FROM produtos ORDER BY id LIMIT 10 OFFSET 20;
 
 -- ============================================
--- EXEMPLO 4: Sintaxe alternativa (MySQL)
+-- Exemplo 4: Sintaxe alternativa (MySQL)
 -- ============================================
 -- LIMIT offset, quantidade
 SELECT * FROM produtos ORDER BY id LIMIT 10, 10;  -- Igual a LIMIT 10 OFFSET 10
 
 -- ============================================
--- EXEMPLO 5: LIMIT com WHERE
+-- Exemplo 5: LIMIT com WHERE
 -- ============================================
 -- Os 5 produtos mais baratos da categoria Eletrônicos
 SELECT * FROM produtos
@@ -66,13 +68,13 @@ ORDER BY preco ASC
 LIMIT 5;
 
 -- ============================================
--- EXEMPLO 6: LIMIT para verificação rápida
+-- Exemplo 6: LIMIT para verificação rápida
 -- ============================================
 -- Ver a estrutura dos dados rapidamente
 SELECT * FROM clientes LIMIT 1;
 
 -- ============================================
--- EXEMPLO 7: LIMIT com JOIN
+-- Exemplo 7: LIMIT com JOIN
 -- ============================================
 -- Os 10 maiores pedidos com informações do cliente
 SELECT 
@@ -85,7 +87,7 @@ ORDER BY p.valor_total DESC
 LIMIT 10;
 
 -- ============================================
--- EXEMPLO 8: LIMIT em subquery
+-- Exemplo 8: LIMIT em subquery
 -- ============================================
 -- Clientes que fizeram os 5 maiores pedidos
 SELECT * FROM clientes
@@ -96,7 +98,7 @@ WHERE id IN (
 );
 
 -- ============================================
--- EXEMPLO 9: TOP (SQL Server)
+-- Exemplo 9: TOP (SQL Server)
 -- ============================================
 -- SQL Server usa TOP em vez de LIMIT
 -- SELECT TOP 10 * FROM clientes;
@@ -106,7 +108,7 @@ WHERE id IN (
 -- SELECT TOP 10 PERCENT * FROM clientes;
 
 -- ============================================
--- EXEMPLO 10: FETCH FIRST (SQL padrão / Oracle)
+-- Exemplo 10: FETCH FIRST (SQL padrão / Oracle)
 -- ============================================
 -- SELECT * FROM produtos
 -- ORDER BY preco DESC
@@ -119,7 +121,7 @@ WHERE id IN (
 -- FETCH NEXT 10 ROWS ONLY;
 
 -- ============================================
--- EXEMPLO 11: Paginação dinâmica (exemplo prático)
+-- Exemplo 11: Paginação dinâmica  Exemplo prático)
 -- ============================================
 -- Para implementar paginação:
 -- - page_size = 10 (itens por página)
@@ -133,7 +135,7 @@ SELECT * FROM produtos ORDER BY id LIMIT 10 OFFSET 0;
 SELECT * FROM produtos ORDER BY id LIMIT 10 OFFSET 40;
 
 -- ============================================
--- EXEMPLO 12: LIMIT com GROUP BY
+-- Exemplo 12: LIMIT com GROUP BY
 -- ============================================
 -- As 5 categorias com mais produtos
 SELECT categoria, COUNT(*) AS total
