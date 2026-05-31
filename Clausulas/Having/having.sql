@@ -1,15 +1,15 @@
 -- ============================================
--- CLÁUSULA: HAVING
+-- Claúsula: HAVING
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A cláusula HAVING é usada para filtrar grupos de resultados
 -- após o uso de GROUP BY. É similar ao WHERE, mas enquanto
 -- WHERE filtra linhas ANTES do agrupamento, HAVING filtra
 -- grupos DEPOIS do agrupamento.
 -- HAVING pode usar funções de agregação, WHERE não pode.
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- SELECT coluna, função_agregação(coluna)
 -- FROM tabela
 -- GROUP BY coluna
@@ -18,7 +18,7 @@
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Filtrar por contagem
+-- Exemplo 1: Filtrar por contagem
 -- ============================================
 -- Cidades com mais de 100 clientes
 SELECT cidade, COUNT(*) AS total_clientes
@@ -27,7 +27,7 @@ GROUP BY cidade
 HAVING COUNT(*) > 100;
 
 -- ============================================
--- EXEMPLO 2: Filtrar por soma
+-- Exemplo 2: Filtrar por soma
 -- ============================================
 -- Categorias com vendas acima de R$ 10.000
 SELECT categoria, SUM(preco * quantidade) AS total_vendas
@@ -37,7 +37,7 @@ GROUP BY categoria
 HAVING SUM(preco * quantidade) > 10000;
 
 -- ============================================
--- EXEMPLO 3: Filtrar por média
+-- Exemplo 3: Filtrar por média
 -- ============================================
 -- Categorias com preço médio acima de R$ 200
 SELECT categoria, AVG(preco) AS preco_medio
@@ -46,7 +46,7 @@ GROUP BY categoria
 HAVING AVG(preco) > 200;
 
 -- ============================================
--- EXEMPLO 4: Usando alias no HAVING (alguns SGBDs)
+-- Exemplo 4: Usando alias no HAVING (alguns SGBDs)
 -- ============================================
 -- MySQL permite usar o alias
 SELECT categoria, COUNT(*) AS total_produtos
@@ -61,7 +61,7 @@ GROUP BY categoria
 HAVING COUNT(*) > 5;
 
 -- ============================================
--- EXEMPLO 5: HAVING com múltiplas condições
+-- Exemplo 5: HAVING com múltiplas condições
 -- ============================================
 SELECT categoria, COUNT(*) AS total, AVG(preco) AS media
 FROM produtos
@@ -69,7 +69,7 @@ GROUP BY categoria
 HAVING COUNT(*) > 5 AND AVG(preco) < 500;
 
 -- ============================================
--- EXEMPLO 6: HAVING com OR
+-- Exemplo 6: HAVING com OR
 -- ============================================
 SELECT categoria, SUM(estoque) AS estoque_total
 FROM produtos
@@ -77,7 +77,7 @@ GROUP BY categoria
 HAVING SUM(estoque) > 1000 OR SUM(estoque) < 10;
 
 -- ============================================
--- EXEMPLO 7: WHERE + HAVING juntos
+-- Exemplo 7: WHERE + HAVING juntos
 -- ============================================
 -- WHERE filtra as linhas, HAVING filtra os grupos
 SELECT categoria, COUNT(*) AS total_ativos
@@ -87,7 +87,7 @@ GROUP BY categoria
 HAVING COUNT(*) > 10;       -- Depois filtra categorias com mais de 10
 
 -- ============================================
--- EXEMPLO 8: HAVING com MIN/MAX
+-- Exemplo 8: HAVING com MIN/MAX
 -- ============================================
 -- Categorias onde o produto mais barato custa mais de R$ 50
 SELECT categoria, MIN(preco) AS menor_preco
@@ -102,7 +102,7 @@ GROUP BY categoria
 HAVING MAX(preco) < 1000;
 
 -- ============================================
--- EXEMPLO 9: HAVING com BETWEEN
+-- Exemplo 9: HAVING com BETWEEN
 -- ============================================
 SELECT 
     YEAR(data_pedido) AS ano,
@@ -113,7 +113,7 @@ GROUP BY YEAR(data_pedido), MONTH(data_pedido)
 HAVING SUM(valor_total) BETWEEN 50000 AND 100000;
 
 -- ============================================
--- EXEMPLO 10: HAVING com subquery
+-- Exemplo 10: HAVING com subquery
 -- ============================================
 -- Categorias com média acima da média geral
 SELECT categoria, AVG(preco) AS preco_medio
@@ -122,7 +122,7 @@ GROUP BY categoria
 HAVING AVG(preco) > (SELECT AVG(preco) FROM produtos);
 
 -- ============================================
--- EXEMPLO 11: Combinação completa
+-- Exemplo 11: Combinação completa
 -- ============================================
 SELECT 
     c.cidade,
