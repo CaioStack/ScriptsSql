@@ -1,19 +1,19 @@
 -- ============================================
--- CLÁUSULA: WHERE
+-- Claúsula: WHERE
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A cláusula WHERE é usada para filtrar registros,
 -- retornando apenas aqueles que atendem a uma condição
 -- especificada. Pode ser usada com SELECT, UPDATE e DELETE.
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- SELECT colunas FROM tabela WHERE condição;
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Comparação simples
+-- Exemplo 1: Comparação simples
 -- ============================================
 -- Igual
 SELECT * FROM clientes WHERE cidade = 'São Paulo';
@@ -35,7 +35,7 @@ SELECT * FROM clientes WHERE idade >= 18;
 SELECT * FROM produtos WHERE preco <= 50;
 
 -- ============================================
--- EXEMPLO 2: Múltiplas condições com AND
+-- Exemplo 2: Múltiplas condições com AND
 -- ============================================
 -- Todas as condições devem ser verdadeiras
 SELECT * FROM produtos
@@ -44,7 +44,7 @@ AND preco < 1000
 AND estoque > 0;
 
 -- ============================================
--- EXEMPLO 3: Múltiplas condições com OR
+-- Exemplo 3: Múltiplas condições com OR
 -- ============================================
 -- Pelo menos uma condição deve ser verdadeira
 SELECT * FROM clientes
@@ -53,7 +53,7 @@ OR cidade = 'Rio de Janeiro'
 OR cidade = 'Belo Horizonte';
 
 -- ============================================
--- EXEMPLO 4: Combinando AND e OR
+-- Exemplo 4: Combinando AND e OR
 -- ============================================
 -- Use parênteses para definir a precedência
 SELECT * FROM produtos
@@ -61,7 +61,7 @@ WHERE categoria = 'Eletrônicos'
 AND (preco < 500 OR estoque > 100);
 
 -- ============================================
--- EXEMPLO 5: WHERE com IN
+-- Exemplo 5: WHERE com IN
 -- ============================================
 SELECT * FROM clientes
 WHERE cidade IN ('São Paulo', 'Rio de Janeiro', 'Curitiba');
@@ -70,13 +70,13 @@ SELECT * FROM pedidos
 WHERE status IN ('pendente', 'processando');
 
 -- ============================================
--- EXEMPLO 6: WHERE com NOT IN
+-- Exemplo 6: WHERE com NOT IN
 -- ============================================
 SELECT * FROM produtos
 WHERE categoria NOT IN ('Descontinuado', 'Esgotado');
 
 -- ============================================
--- EXEMPLO 7: WHERE com BETWEEN
+-- Exemplo 7: WHERE com BETWEEN
 -- ============================================
 SELECT * FROM produtos
 WHERE preco BETWEEN 100 AND 500;
@@ -85,7 +85,7 @@ SELECT * FROM pedidos
 WHERE data_pedido BETWEEN '2024-01-01' AND '2024-12-31';
 
 -- ============================================
--- EXEMPLO 8: WHERE com LIKE (padrões de texto)
+-- Exemplo 8: WHERE com LIKE (padrões de texto)
 -- ============================================
 -- Começa com 'Jo'
 SELECT * FROM clientes WHERE nome LIKE 'Jo%';
@@ -100,21 +100,21 @@ SELECT * FROM clientes WHERE nome LIKE '%Santos%';
 SELECT * FROM clientes WHERE nome LIKE '_a%';
 
 -- ============================================
--- EXEMPLO 9: WHERE com IS NULL / IS NOT NULL
+-- Exemplo 9: WHERE com IS NULL / IS NOT NULL
 -- ============================================
 SELECT * FROM clientes WHERE telefone IS NULL;
 
 SELECT * FROM clientes WHERE telefone IS NOT NULL;
 
 -- ============================================
--- EXEMPLO 10: WHERE com NOT
+-- Exemplo 10: WHERE com NOT
 -- ============================================
 SELECT * FROM clientes WHERE NOT cidade = 'São Paulo';
 
 SELECT * FROM produtos WHERE NOT (preco > 100 AND estoque < 50);
 
 -- ============================================
--- EXEMPLO 11: WHERE com EXISTS
+-- Exemplo 11: WHERE com EXISTS
 -- ============================================
 SELECT * FROM clientes c
 WHERE EXISTS (
@@ -122,7 +122,7 @@ WHERE EXISTS (
 );
 
 -- ============================================
--- EXEMPLO 12: WHERE com subquery
+-- Exemplo 12: WHERE com subquery
 -- ============================================
 SELECT * FROM produtos
 WHERE preco > (SELECT AVG(preco) FROM produtos);
@@ -131,14 +131,14 @@ SELECT * FROM clientes
 WHERE id IN (SELECT cliente_id FROM pedidos WHERE valor_total > 1000);
 
 -- ============================================
--- EXEMPLO 13: WHERE em UPDATE
+-- Exemplo 13: WHERE em UPDATE
 -- ============================================
 UPDATE produtos
 SET preco = preco * 0.9
 WHERE categoria = 'Promocional';
 
 -- ============================================
--- EXEMPLO 14: WHERE em DELETE
+-- Exemplo 14: WHERE em DELETE
 -- ============================================
 DELETE FROM logs
 WHERE data_criacao < '2023-01-01';
