@@ -2,7 +2,7 @@
 -- CHECK - Validacao de Valores
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- Descrição:
 -- A constraint CHECK limita os valores que podem ser inseridos em uma coluna,
 -- baseado em uma condicao logica. E util para garantir integridade de dados
 -- em nivel de banco de dados.
@@ -10,7 +10,7 @@
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 1: CHECK simples
+-- Exemplo 1: CHECK simples
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE produtos (
@@ -21,7 +21,7 @@ CREATE TABLE produtos (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 2: CHECK com nome de constraint
+-- Exemplo 2: CHECK com nome de constraint
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE funcionarios (
@@ -34,7 +34,7 @@ CREATE TABLE funcionarios (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 3: CHECK com lista de valores
+-- Exemplo 3: CHECK com lista de valores
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE pedidos (
@@ -46,7 +46,7 @@ CREATE TABLE pedidos (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 4: CHECK com multiplas colunas
+-- Exemplo 4: CHECK com multiplas colunas
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE eventos (
@@ -57,14 +57,14 @@ CREATE TABLE eventos (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 5: Adicionando CHECK a tabela existente
+-- Exemplo 5: Adicionando CHECK a tabela existente
 -- ----------------------------------------------------------------------------
 
 ALTER TABLE produtos
 ADD CONSTRAINT chk_preco_positivo CHECK (preco > 0);
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 6: Validacoes comuns com CHECK
+-- Exemplo 6: Validacoes comuns com CHECK
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE clientes (
