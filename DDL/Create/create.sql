@@ -2,12 +2,12 @@
 -- COMANDO: CREATE
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- O comando CREATE é usado para criar novos objetos no banco de dados,
 -- como tabelas, índices, views, databases, procedures, etc.
 -- É um comando DDL (Data Definition Language).
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- CREATE TABLE nome_tabela (
 --     coluna1 tipo_dado [constraints],
 --     coluna2 tipo_dado [constraints],
@@ -17,12 +17,12 @@
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Criar um banco de dados
+-- Exemplo 1: Criar um banco de dados
 -- ============================================
 CREATE DATABASE loja_virtual;
 
 -- ============================================
--- EXEMPLO 2: Criar uma tabela simples
+-- Exemplo 2: Criar uma tabela simples
 -- ============================================
 CREATE TABLE clientes (
     id INT,
@@ -31,7 +31,7 @@ CREATE TABLE clientes (
 );
 
 -- ============================================
--- EXEMPLO 3: Criar tabela com constraints
+-- Exemplo 3: Criar tabela com constraints
 -- ============================================
 CREATE TABLE produtos (
     id INT PRIMARY KEY AUTO_INCREMENT,    -- Chave primária com auto incremento
@@ -43,7 +43,7 @@ CREATE TABLE produtos (
 );
 
 -- ============================================
--- EXEMPLO 4: Criar tabela com chave estrangeira
+-- Exemplo 4: Criar tabela com chave estrangeira
 -- ============================================
 CREATE TABLE pedidos (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -56,7 +56,7 @@ CREATE TABLE pedidos (
 );
 
 -- ============================================
--- EXEMPLO 5: Criar tabela com múltiplas constraints
+-- Exemplo 5: Criar tabela com múltiplas constraints
 -- ============================================
 CREATE TABLE usuarios (
     id INT PRIMARY KEY AUTO_INCREMENT,
