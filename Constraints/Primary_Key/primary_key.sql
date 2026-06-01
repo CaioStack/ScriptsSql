@@ -2,12 +2,12 @@
 -- PRIMARY KEY - Chave Primaria
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- Descrição:
 -- A PRIMARY KEY e uma constraint que identifica de forma UNICA cada registro
 -- em uma tabela. Combina as restricoes UNIQUE e NOT NULL automaticamente.
 -- Cada tabela pode ter apenas UMA chave primaria.
 --
--- CARACTERISTICAS:
+-- Características:
 -- - Valores devem ser unicos
 -- - Nao permite valores NULL
 -- - Cria um indice automaticamente
@@ -16,7 +16,7 @@
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 1: PRIMARY KEY simples na criacao da tabela
+-- Exemplo 1: PRIMARY KEY simples na criacao da tabela
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE clientes (
@@ -34,7 +34,7 @@ CREATE TABLE clientes (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 2: PRIMARY KEY com AUTO_INCREMENT
+-- Exemplo 2: PRIMARY KEY com AUTO_INCREMENT
 -- ----------------------------------------------------------------------------
 
 -- MySQL:
@@ -59,7 +59,7 @@ CREATE TABLE produtos (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 3: PRIMARY KEY composta
+-- Exemplo 3: PRIMARY KEY composta
 -- ----------------------------------------------------------------------------
 -- Chave formada por multiplas colunas
 
@@ -74,7 +74,7 @@ CREATE TABLE itens_pedido (
 -- Cada combinacao pedido_id + produto_id deve ser unica
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 4: Adicionando PRIMARY KEY a tabela existente
+-- Exemplo 4: Adicionando PRIMARY KEY a tabela existente
 -- ----------------------------------------------------------------------------
 
 ALTER TABLE usuarios
@@ -85,7 +85,7 @@ ALTER TABLE usuarios
 ADD CONSTRAINT pk_usuarios PRIMARY KEY (id);
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 5: Removendo PRIMARY KEY
+-- Exemplo 5: Removendo PRIMARY KEY
 -- ----------------------------------------------------------------------------
 
 -- MySQL:
