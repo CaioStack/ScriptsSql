@@ -2,7 +2,7 @@
 -- DEFAULT - Valor Padrao
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- Descrição:
 -- A constraint DEFAULT define um valor automatico para uma coluna quando
 -- nenhum valor e especificado durante o INSERT. E util para definir
 -- padroes como datas de criacao, status iniciais, etc.
@@ -10,7 +10,7 @@
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 1: DEFAULT simples
+-- Exemplo 1: DEFAULT simples
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE usuarios (
@@ -25,7 +25,7 @@ INSERT INTO usuarios (nome) VALUES ('Joao');
 -- Resultado: ativo = TRUE, nivel = 1
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 2: DEFAULT com data/hora atual
+-- Exemplo 2: DEFAULT com data/hora atual
 -- ----------------------------------------------------------------------------
 
 -- MySQL:
@@ -44,7 +44,7 @@ CREATE TABLE logs (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 3: DEFAULT com texto
+-- Exemplo 3: DEFAULT com texto
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE pedidos (
@@ -54,7 +54,7 @@ CREATE TABLE pedidos (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 4: DEFAULT com valores numericos
+-- Exemplo 4: DEFAULT com valores numericos
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE produtos (
@@ -66,7 +66,7 @@ CREATE TABLE produtos (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 5: Adicionando DEFAULT a tabela existente
+-- Exemplo 5: Adicionando DEFAULT a tabela existente
 -- ----------------------------------------------------------------------------
 
 -- MySQL:
@@ -82,7 +82,7 @@ ALTER TABLE produtos
 ALTER COLUMN estoque SET DEFAULT 0;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 6: Removendo DEFAULT
+-- Exemplo 6: Removendo DEFAULT
 -- ----------------------------------------------------------------------------
 
 ALTER TABLE produtos
