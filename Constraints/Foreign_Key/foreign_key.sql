@@ -2,12 +2,12 @@
 -- FOREIGN KEY - Chave Estrangeira
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- Descrição:
 -- A FOREIGN KEY estabelece um relacionamento entre duas tabelas, garantindo
 -- integridade referencial. A coluna FK em uma tabela referencia a PK (ou UK)
 -- de outra tabela.
 --
--- CARACTERISTICAS:
+-- Características:
 -- - Garante que o valor exista na tabela referenciada
 -- - Pode ter acoes para UPDATE e DELETE (CASCADE, SET NULL, etc.)
 -- - Uma tabela pode ter multiplas FOREIGN KEYS
@@ -15,7 +15,7 @@
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 1: FOREIGN KEY basica
+-- Exemplo 1: FOREIGN KEY basica
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE pedidos (
@@ -26,7 +26,7 @@ CREATE TABLE pedidos (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 2: FOREIGN KEY com nome de constraint
+-- Exemplo 2: FOREIGN KEY com nome de constraint
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE pedidos (
@@ -38,7 +38,7 @@ CREATE TABLE pedidos (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 3: FOREIGN KEY com ON DELETE
+-- Exemplo 3: FOREIGN KEY com ON DELETE
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE pedidos (
@@ -56,7 +56,7 @@ CREATE TABLE pedidos (
 -- NO ACTION   : Igual a RESTRICT
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 4: FOREIGN KEY com ON UPDATE
+-- Exemplo 4: FOREIGN KEY com ON UPDATE
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE itens_pedido (
@@ -68,7 +68,7 @@ CREATE TABLE itens_pedido (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 5: Multiplas FOREIGN KEYS
+-- Exemplo 5: Multiplas FOREIGN KEYS
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE itens_pedido (
@@ -81,7 +81,7 @@ CREATE TABLE itens_pedido (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 6: Adicionando FOREIGN KEY a tabela existente
+-- Exemplo 6: Adicionando FOREIGN KEY a tabela existente
 -- ----------------------------------------------------------------------------
 
 ALTER TABLE pedidos
@@ -89,7 +89,7 @@ ADD CONSTRAINT fk_pedido_cliente
 FOREIGN KEY (cliente_id) REFERENCES clientes(id);
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 7: Removendo FOREIGN KEY
+-- Exemplo 7: Removendo FOREIGN KEY
 -- ----------------------------------------------------------------------------
 
 -- MySQL:
