@@ -2,25 +2,25 @@
 -- COMANDO: TRUNCATE
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- O comando TRUNCATE remove TODOS os registros de uma tabela
 -- de forma rápida, mas mantém a estrutura da tabela intacta.
 -- É mais rápido que DELETE pois não gera logs de transação
 -- para cada linha removida.
 -- É um comando DDL (Data Definition Language).
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- TRUNCATE TABLE nome_tabela;
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Truncar uma tabela simples
+-- Exemplo 1: Truncar uma tabela simples
 -- ============================================
 TRUNCATE TABLE logs_acesso;
 
 -- ============================================
--- EXEMPLO 2: Truncar e resetar auto_increment
+-- Exemplo 2: Truncar e resetar auto_increment
 -- ============================================
 -- MySQL - TRUNCATE já reseta o AUTO_INCREMENT automaticamente
 TRUNCATE TABLE pedidos;
@@ -28,21 +28,21 @@ TRUNCATE TABLE pedidos;
 -- Após TRUNCATE, o próximo ID será 1 novamente
 
 -- ============================================
--- EXEMPLO 3: Truncar múltiplas tabelas (MySQL)
+-- Exemplo 3: Truncar múltiplas tabelas (MySQL)
 -- ============================================
 -- Deve ser feito separadamente
 TRUNCATE TABLE itens_pedido;
 TRUNCATE TABLE pedidos;
 
 -- ============================================
--- EXEMPLO 4: TRUNCATE com CASCADE (PostgreSQL)
+-- Exemplo 4: TRUNCATE com CASCADE (PostgreSQL)
 -- ============================================
 -- Remove dados da tabela e de todas as tabelas
 -- que referenciam ela via chave estrangeira
 TRUNCATE TABLE clientes CASCADE;
 
 -- ============================================
--- EXEMPLO 5: TRUNCATE com RESTART IDENTITY (PostgreSQL)
+-- Exemplo 5: TRUNCATE com RESTART IDENTITY (PostgreSQL)
 -- ============================================
 -- Reseta as sequências (auto increment)
 TRUNCATE TABLE produtos RESTART IDENTITY;
