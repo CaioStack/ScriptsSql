@@ -2,34 +2,34 @@
 -- COMANDO: DROP
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- O comando DROP é usado para remover/excluir permanentemente
 -- objetos do banco de dados, como tabelas, índices, views,
 -- databases, etc. ATENÇÃO: Esta ação é irreversível!
 -- É um comando DDL (Data Definition Language).
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- DROP OBJETO nome_objeto;
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Excluir uma tabela
+-- Exemplo 1: Excluir uma tabela
 -- ============================================
 DROP TABLE clientes;
 
 -- ============================================
--- EXEMPLO 2: Excluir tabela se existir (evita erro)
+-- Exemplo 2: Excluir tabela se existir (evita erro)
 -- ============================================
 DROP TABLE IF EXISTS clientes;
 
 -- ============================================
--- EXEMPLO 3: Excluir múltiplas tabelas
+-- Exemplo 3: Excluir múltiplas tabelas
 -- ============================================
 DROP TABLE IF EXISTS pedidos, itens_pedido, clientes;
 
 -- ============================================
--- EXEMPLO 4: Excluir um banco de dados
+-- Exemplo 4: Excluir um banco de dados
 -- ============================================
 DROP DATABASE loja_virtual;
 
@@ -37,7 +37,7 @@ DROP DATABASE loja_virtual;
 DROP DATABASE IF EXISTS loja_virtual;
 
 -- ============================================
--- EXEMPLO 5: Excluir um índice
+-- Exemplo 5: Excluir um índice
 -- ============================================
 -- MySQL
 DROP INDEX idx_nome ON clientes;
@@ -46,22 +46,22 @@ DROP INDEX idx_nome ON clientes;
 DROP INDEX idx_nome;
 
 -- ============================================
--- EXEMPLO 6: Excluir uma view
+-- Exemplo 6: Excluir uma view
 -- ============================================
 DROP VIEW IF EXISTS view_clientes_ativos;
 
 -- ============================================
--- EXEMPLO 7: Excluir uma procedure
+-- Exemplo 7: Excluir uma procedure
 -- ============================================
 DROP PROCEDURE IF EXISTS calcular_total;
 
 -- ============================================
--- EXEMPLO 8: Excluir uma function
+-- Exemplo 8: Excluir uma function
 -- ============================================
 DROP FUNCTION IF EXISTS formatar_cpf;
 
 -- ============================================
--- EXEMPLO 9: Excluir um trigger
+-- Exemplo 9: Excluir um trigger
 -- ============================================
 DROP TRIGGER IF EXISTS trigger_atualiza_estoque;
 
