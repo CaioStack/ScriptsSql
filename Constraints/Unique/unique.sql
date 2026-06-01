@@ -2,7 +2,7 @@
 -- UNIQUE - Valores Unicos
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- Descrição:
 -- A constraint UNIQUE garante que todos os valores em uma coluna (ou conjunto
 -- de colunas) sejam diferentes. Diferente da PRIMARY KEY, permite valores NULL
 -- e uma tabela pode ter multiplas constraints UNIQUE.
@@ -10,7 +10,7 @@
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 1: UNIQUE simples
+-- Exemplo 1: UNIQUE simples
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE usuarios (
@@ -20,7 +20,7 @@ CREATE TABLE usuarios (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 2: UNIQUE com nome de constraint
+-- Exemplo 2: UNIQUE com nome de constraint
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE usuarios (
@@ -32,7 +32,7 @@ CREATE TABLE usuarios (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 3: UNIQUE composta
+-- Exemplo 3: UNIQUE composta
 -- ----------------------------------------------------------------------------
 -- Combinacao de colunas deve ser unica
 
@@ -44,17 +44,17 @@ CREATE TABLE matriculas (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 4: Adicionando UNIQUE a tabela existente
+-- Exemplo 4: Adicionando UNIQUE a tabela existente
 -- ----------------------------------------------------------------------------
 
 ALTER TABLE produtos
 ADD CONSTRAINT uk_produtos_codigo UNIQUE (codigo);
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 5: UNIQUE vs PRIMARY KEY
+-- Exemplo 5: UNIQUE vs PRIMARY KEY
 -- ----------------------------------------------------------------------------
 
-CREATE TABLE exemplo (
+CREATE TABLE Exemplo (
     id INT PRIMARY KEY,           -- Apenas uma por tabela, NOT NULL
     email VARCHAR(150) UNIQUE,    -- Pode ter varias, permite NULL
     cpf VARCHAR(11) UNIQUE        -- Pode ter varias, permite NULL
