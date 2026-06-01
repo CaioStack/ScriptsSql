@@ -2,7 +2,7 @@
 -- NOT NULL - Valores Obrigatorios
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- Descrição:
 -- A constraint NOT NULL impede que uma coluna aceite valores NULL, tornando
 -- o preenchimento obrigatorio. E uma das constraints mais basicas e
 -- frequentemente usadas.
@@ -10,7 +10,7 @@
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 1: NOT NULL na criacao da tabela
+-- Exemplo 1: NOT NULL na criacao da tabela
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE clientes (
@@ -21,7 +21,7 @@ CREATE TABLE clientes (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 2: NOT NULL com DEFAULT
+-- Exemplo 2: NOT NULL com DEFAULT
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE pedidos (
@@ -32,7 +32,7 @@ CREATE TABLE pedidos (
 );
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 3: Adicionando NOT NULL a tabela existente
+-- Exemplo 3: Adicionando NOT NULL a tabela existente
 -- ----------------------------------------------------------------------------
 
 -- Primeiro, atualize valores NULL existentes:
@@ -47,7 +47,7 @@ ALTER TABLE clientes
 ALTER COLUMN telefone VARCHAR(20) NOT NULL;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 4: Removendo NOT NULL
+-- Exemplo 4: Removendo NOT NULL
 -- ----------------------------------------------------------------------------
 
 ALTER TABLE clientes
@@ -58,7 +58,7 @@ ALTER TABLE clientes
 ALTER COLUMN telefone VARCHAR(20) NULL;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 5: Combinando constraints
+-- Exemplo 5: Combinando constraints
 -- ----------------------------------------------------------------------------
 
 CREATE TABLE produtos (
