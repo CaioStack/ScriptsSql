@@ -2,23 +2,23 @@
 -- FUNÇÃO: AVG
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A função AVG (Average) retorna a média aritmética
 -- de uma coluna numérica. Ignora valores NULL.
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- SELECT AVG(coluna) FROM tabela;
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Média simples
+-- Exemplo 1: Média simples
 -- ============================================
 -- Preço médio dos produtos
 SELECT AVG(preco) AS preco_medio FROM produtos;
 
 -- ============================================
--- EXEMPLO 2: AVG com WHERE
+-- Exemplo 2: AVG com WHERE
 -- ============================================
 -- Preço médio de eletrônicos
 SELECT AVG(preco) AS preco_medio_eletronicos
@@ -31,7 +31,7 @@ FROM pedidos
 WHERE YEAR(data_pedido) = YEAR(CURDATE());
 
 -- ============================================
--- EXEMPLO 3: AVG com GROUP BY
+-- Exemplo 3: AVG com GROUP BY
 -- ============================================
 -- Preço médio por categoria
 SELECT 
@@ -50,7 +50,7 @@ JOIN pedidos p ON c.id = p.cliente_id
 GROUP BY c.id, c.nome;
 
 -- ============================================
--- EXEMPLO 4: AVG com HAVING
+-- Exemplo 4: AVG com HAVING
 -- ============================================
 -- Categorias com preço médio acima de R$ 200
 SELECT 
@@ -61,7 +61,7 @@ GROUP BY categoria
 HAVING AVG(preco) > 200;
 
 -- ============================================
--- EXEMPLO 5: AVG com ROUND (arredondamento)
+-- Exemplo 5: AVG com ROUND (arredondamento)
 -- ============================================
 -- Média com 2 casas decimais
 SELECT ROUND(AVG(preco), 2) AS preco_medio
@@ -76,7 +76,7 @@ FROM produtos
 GROUP BY categoria;
 
 -- ============================================
--- EXEMPLO 6: AVG vs SUM/COUNT
+-- Exemplo 6: AVG vs SUM/COUNT
 -- ============================================
 -- AVG é equivalente a SUM/COUNT
 SELECT 
@@ -85,14 +85,14 @@ SELECT
 FROM produtos;
 
 -- ============================================
--- EXEMPLO 7: AVG com DISTINCT
+-- Exemplo 7: AVG com DISTINCT
 -- ============================================
 -- Média de valores únicos de preço
 SELECT AVG(DISTINCT preco) AS media_precos_unicos
 FROM produtos;
 
 -- ============================================
--- EXEMPLO 8: Comparar com a média
+-- Exemplo 8: Comparar com a média
 -- ============================================
 -- Produtos acima da média
 SELECT nome, preco
@@ -109,7 +109,7 @@ WHERE p1.preco < (
 );
 
 -- ============================================
--- EXEMPLO 9: AVG com múltiplas métricas
+-- Exemplo 9: AVG com múltiplas métricas
 -- ============================================
 SELECT 
     categoria,
@@ -122,7 +122,7 @@ FROM produtos
 GROUP BY categoria;
 
 -- ============================================
--- EXEMPLO 10: Média móvel (Rolling Average)
+-- Exemplo 10: Média móvel (Rolling Average)
 -- ============================================
 -- MySQL 8+ / PostgreSQL / SQL Server
 SELECT 
@@ -135,7 +135,7 @@ SELECT
 FROM pedidos;
 
 -- ============================================
--- EXEMPLO 11: Média ponderada
+-- Exemplo 11: Média ponderada
 -- ============================================
 -- AVG normal não considera pesos
 -- Para média ponderada, use SUM/SUM
@@ -150,7 +150,7 @@ SELECT
 FROM itens_pedido;
 
 -- ============================================
--- EXEMPLO 12: AVG por período
+-- Exemplo 12: AVG por período
 -- ============================================
 -- Ticket médio por mês
 SELECT 
