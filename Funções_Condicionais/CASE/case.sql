@@ -2,12 +2,12 @@
 -- CASE - Expressao Condicional
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- Descrição:
 -- O CASE e uma expressao condicional que permite executar logica if-then-else
 -- dentro de uma consulta SQL. Retorna valores diferentes com base em condicoes
 -- avaliadas sequencialmente.
 --
--- SINTAXE BASICA:
+-- Sintaxe básica:
 --
 -- Forma Simples (comparacao de igualdade):
 -- CASE expressao
@@ -23,14 +23,14 @@
 --     ELSE resultado_padrao
 -- END
 --
--- COMPATIBILIDADE:
+-- Compatibilidade:
 -- - Disponivel em todos os principais SGBDs (padrao SQL)
 -- - MySQL, PostgreSQL, SQL Server, Oracle: mesma sintaxe
 --
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 1: CASE simples
+-- Exemplo 1: CASE simples
 -- ----------------------------------------------------------------------------
 -- Traduzindo codigos para descricoes
 
@@ -54,7 +54,7 @@ FROM pedidos;
 -- | 3         | E      | Enviado          |
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 2: CASE pesquisado (com condicoes)
+-- Exemplo 2: CASE pesquisado (com condicoes)
 -- ----------------------------------------------------------------------------
 -- Categorizando valores
 
@@ -70,7 +70,7 @@ SELECT
 FROM funcionarios;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 3: CASE em ORDER BY
+-- Exemplo 3: CASE em ORDER BY
 -- ----------------------------------------------------------------------------
 -- Ordenacao personalizada
 
@@ -85,7 +85,7 @@ ORDER BY
     END;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 4: CASE com agregacao
+-- Exemplo 4: CASE com agregacao
 -- ----------------------------------------------------------------------------
 -- Contagem condicional (pivot simples)
 
@@ -98,7 +98,7 @@ FROM vendas
 GROUP BY YEAR(data_venda);
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 5: CASE em UPDATE
+-- Exemplo 5: CASE em UPDATE
 -- ----------------------------------------------------------------------------
 -- Atualizacao condicional
 
@@ -112,7 +112,7 @@ SET desconto =
     END;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 6: CASE aninhado
+-- Exemplo 6: CASE aninhado
 -- ----------------------------------------------------------------------------
 -- Multiplos niveis de condicao
 
@@ -132,7 +132,7 @@ SELECT
 FROM itens;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 7: CASE com NULL
+-- Exemplo 7: CASE com NULL
 -- ----------------------------------------------------------------------------
 -- Tratando valores nulos
 
@@ -146,7 +146,7 @@ SELECT
 FROM clientes;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 8: CASE para calculos condicionais
+-- Exemplo 8: CASE para calculos condicionais
 -- ----------------------------------------------------------------------------
 -- Aplicando regras de negocio
 
@@ -161,7 +161,7 @@ SELECT
 FROM pedidos;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 9: CASE com funcoes
+-- Exemplo 9: CASE com funcoes
 -- ----------------------------------------------------------------------------
 -- Combinando com outras funcoes
 
