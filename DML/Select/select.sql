@@ -2,13 +2,13 @@
 -- COMANDO: SELECT
 -- ============================================
 -- 
--- Descrição:
+-- DESCRIÇÃO:
 -- O comando SELECT é usado para consultar/recuperar dados
 -- de uma ou mais tabelas do banco de dados.
 -- É o comando mais utilizado em SQL.
 -- É um comando DML (Data Manipulation Language).
 --
--- Sintaxe básica:
+-- SINTAXE BÁSICA:
 -- SELECT coluna1, coluna2, ...
 -- FROM tabela
 -- [WHERE condição]
@@ -17,18 +17,18 @@
 -- ============================================
 
 -- ============================================
--- Exemplo 1: Selecionar todas as colunas
+-- EXEMPLO 1: Selecionar todas as colunas
 -- ============================================
 -- O asterisco (*) seleciona TODAS as colunas
 SELECT * FROM clientes;
 
 -- ============================================
--- Exemplo 2: Selecionar colunas específicas
+-- EXEMPLO 2: Selecionar colunas específicas
 -- ============================================
 SELECT nome, email FROM clientes;
 
 -- ============================================
--- Exemplo 3: Selecionar com alias (apelido)
+-- EXEMPLO 3: Selecionar com alias (apelido)
 -- ============================================
 SELECT 
     nome AS nome_cliente,
@@ -36,13 +36,13 @@ SELECT
 FROM clientes;
 
 -- ============================================
--- Exemplo 4: Selecionar com condição WHERE
+-- EXEMPLO 4: Selecionar com condição WHERE
 -- ============================================
 SELECT * FROM clientes
 WHERE cidade = 'São Paulo';
 
 -- ============================================
--- Exemplo 5: Selecionar com múltiplas condições
+-- EXEMPLO 5: Selecionar com múltiplas condições
 -- ============================================
 SELECT * FROM produtos
 WHERE preco > 100 AND estoque > 0;
@@ -51,7 +51,7 @@ SELECT * FROM produtos
 WHERE categoria = 'Eletrônicos' OR categoria = 'Informática';
 
 -- ============================================
--- Exemplo 6: Selecionar com ordenação
+-- EXEMPLO 6: Selecionar com ordenação
 -- ============================================
 -- Ordem crescente (padrão)
 SELECT * FROM produtos ORDER BY preco;
@@ -63,7 +63,7 @@ SELECT * FROM produtos ORDER BY preco DESC;
 SELECT * FROM produtos ORDER BY categoria, preco DESC;
 
 -- ============================================
--- Exemplo 7: Limitar resultados
+-- EXEMPLO 7: Limitar resultados
 -- ============================================
 -- MySQL / PostgreSQL
 SELECT * FROM produtos LIMIT 10;
@@ -75,14 +75,14 @@ SELECT * FROM produtos LIMIT 10 OFFSET 5;
 SELECT TOP 10 * FROM produtos;
 
 -- ============================================
--- Exemplo 8: Valores únicos (sem duplicatas)
+-- EXEMPLO 8: Valores únicos (sem duplicatas)
 -- ============================================
 SELECT DISTINCT categoria FROM produtos;
 
 SELECT DISTINCT cidade, estado FROM clientes;
 
 -- ============================================
--- Exemplo 9: Cálculos e expressões
+-- EXEMPLO 9: Cálculos e expressões
 -- ============================================
 SELECT 
     nome,
@@ -92,7 +92,7 @@ SELECT
 FROM itens_pedido;
 
 -- ============================================
--- Exemplo 10: Concatenação de strings
+-- EXEMPLO 10: Concatenação de strings
 -- ============================================
 -- MySQL
 SELECT CONCAT(nome, ' - ', cidade) AS cliente_local
@@ -103,7 +103,7 @@ SELECT nome + ' - ' + cidade AS cliente_local
 FROM clientes;
 
 -- ============================================
--- Exemplo 11: Selecionar com funções de agregação
+-- EXEMPLO 11: Selecionar com funções de agregação
 -- ============================================
 SELECT 
     COUNT(*) AS total_produtos,
@@ -114,7 +114,7 @@ SELECT
 FROM produtos;
 
 -- ============================================
--- Exemplo 12: Selecionar de múltiplas tabelas (JOIN)
+-- EXEMPLO 12: Selecionar de múltiplas tabelas (JOIN)
 -- ============================================
 SELECT 
     c.nome AS cliente,
@@ -124,7 +124,7 @@ FROM clientes c
 INNER JOIN pedidos p ON c.id = p.cliente_id;
 
 -- ============================================
--- Exemplo 13: Subquery no SELECT
+-- EXEMPLO 13: Subquery no SELECT
 -- ============================================
 SELECT 
     nome,
