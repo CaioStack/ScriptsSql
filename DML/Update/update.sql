@@ -2,13 +2,13 @@
 -- COMANDO: UPDATE
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- O comando UPDATE é usado para modificar dados existentes
 -- em uma ou mais linhas de uma tabela.
 -- ATENÇÃO: Sempre use WHERE para evitar atualizar TODAS as linhas!
 -- É um comando DML (Data Manipulation Language).
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- UPDATE tabela
 -- SET coluna1 = valor1, coluna2 = valor2, ...
 -- WHERE condição;
@@ -16,14 +16,14 @@
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Atualizar uma coluna específica
+-- Exemplo 1: Atualizar uma coluna específica
 -- ============================================
 UPDATE clientes
 SET telefone = '11999999999'
 WHERE id = 1;
 
 -- ============================================
--- EXEMPLO 2: Atualizar múltiplas colunas
+-- Exemplo 2: Atualizar múltiplas colunas
 -- ============================================
 UPDATE clientes
 SET 
@@ -33,7 +33,7 @@ SET
 WHERE id = 1;
 
 -- ============================================
--- EXEMPLO 3: Atualizar com cálculo
+-- Exemplo 3: Atualizar com cálculo
 -- ============================================
 -- Aumentar preço em 10%
 UPDATE produtos
@@ -46,7 +46,7 @@ SET estoque = estoque - 1
 WHERE id = 5;
 
 -- ============================================
--- EXEMPLO 4: Atualizar múltiplos registros
+-- Exemplo 4: Atualizar múltiplos registros
 -- ============================================
 -- Inativar todos os clientes sem pedidos há 1 ano
 UPDATE clientes
@@ -54,7 +54,7 @@ SET ativo = FALSE
 WHERE ultimo_pedido < DATE_SUB(NOW(), INTERVAL 1 YEAR);
 
 -- ============================================
--- EXEMPLO 5: UPDATE com subquery
+-- Exemplo 5: UPDATE com subquery
 -- ============================================
 -- Atualizar com valor de outra tabela
 UPDATE produtos
@@ -66,7 +66,7 @@ SET preco = (
 WHERE id = 10;
 
 -- ============================================
--- EXEMPLO 6: UPDATE com JOIN (MySQL)
+-- Exemplo 6: UPDATE com JOIN (MySQL)
 -- ============================================
 UPDATE pedidos p
 INNER JOIN clientes c ON p.cliente_id = c.id
@@ -74,7 +74,7 @@ SET p.desconto = 10
 WHERE c.tipo = 'VIP';
 
 -- ============================================
--- EXEMPLO 7: UPDATE com FROM (PostgreSQL/SQL Server)
+-- Exemplo 7: UPDATE com FROM (PostgreSQL/SQL Server)
 -- ============================================
 UPDATE pedidos
 SET desconto = 10
@@ -83,7 +83,7 @@ WHERE pedidos.cliente_id = clientes.id
 AND clientes.tipo = 'VIP';
 
 -- ============================================
--- EXEMPLO 8: UPDATE com CASE
+-- Exemplo 8: UPDATE com CASE
 -- ============================================
 UPDATE produtos
 SET categoria = CASE
@@ -93,7 +93,7 @@ SET categoria = CASE
 END;
 
 -- ============================================
--- EXEMPLO 9: UPDATE com LIMIT (MySQL)
+-- Exemplo 9: UPDATE com LIMIT (MySQL)
 -- ============================================
 -- Atualizar apenas os primeiros 10 registros
 UPDATE produtos
@@ -102,7 +102,7 @@ ORDER BY vendas DESC
 LIMIT 10;
 
 -- ============================================
--- EXEMPLO 10: UPDATE com RETURNING (PostgreSQL)
+-- Exemplo 10: UPDATE com RETURNING (PostgreSQL)
 -- ============================================
 -- Retorna os registros atualizados
 UPDATE clientes
