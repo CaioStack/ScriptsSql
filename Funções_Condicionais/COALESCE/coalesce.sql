@@ -2,34 +2,34 @@
 -- COALESCE - Primeiro Valor Nao NULL (Padrao ANSI)
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- Descrição:
 -- A funcao COALESCE() retorna o primeiro valor nao NULL de uma lista de
 -- expressoes. E a funcao padrao ANSI SQL para tratamento de valores NULL,
 -- funcionando em todos os principais bancos de dados.
 --
--- SINTAXE BASICA:
+-- Sintawxe básica:
 -- COALESCE(expressao1, expressao2, expressao3, ...)
 --
--- PARAMETROS:
+-- Parâmetros:
 -- - expressao1, expressao2, ... : Lista de valores a serem verificados
 --
--- RETORNO:
+-- Retorno:
 -- - Retorna o primeiro valor da lista que NAO seja NULL
 -- - Se todos forem NULL, retorna NULL
 --
--- COMPATIBILIDADE:
+-- Compatibilidade:
 -- - MySQL: Sim (padrao ANSI)
 -- - PostgreSQL: Sim (padrao ANSI)
 -- - SQL Server: Sim (padrao ANSI)
 -- - Oracle: Sim (padrao ANSI)
 -- - SQLite: Sim (padrao ANSI)
 --
--- VANTAGEM: Por ser padrao ANSI, funciona em TODOS os SGBDs!
+-- Vantagem: Por ser padrao ANSI, funciona em TODOS os SGBDs!
 --
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 1: Uso basico com 2 valores
+-- Exemplo 1: Uso basico com 2 valores
 -- ----------------------------------------------------------------------------
 -- Equivalente a IFNULL/ISNULL/NVL
 
@@ -45,7 +45,7 @@ FROM clientes;
 -- | Joao Santos | Nao informado  |
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 2: Multiplos valores alternativos
+-- Exemplo 2: Multiplos valores alternativos
 -- ----------------------------------------------------------------------------
 -- Principal vantagem: aceita muitos argumentos
 
@@ -62,7 +62,7 @@ FROM contatos;
 -- Retorna o primeiro telefone disponivel, ou 'Sem telefone' se todos forem NULL
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 3: Em calculos
+-- Exemplo 3: Em calculos
 -- ----------------------------------------------------------------------------
 -- Tratando NULL em operacoes matematicas
 
@@ -74,7 +74,7 @@ SELECT
 FROM produtos;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 4: Com valores de diferentes colunas
+-- Exemplo 4: Com valores de diferentes colunas
 -- ----------------------------------------------------------------------------
 -- Priorizando informacoes
 
@@ -85,7 +85,7 @@ SELECT
 FROM empresas;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 5: Em agregacoes
+-- Exemplo 5: Em agregacoes
 -- ----------------------------------------------------------------------------
 -- Garantindo valores em somas e medias
 
@@ -98,7 +98,7 @@ FROM funcionarios
 GROUP BY departamento;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 6: COALESCE vs funcoes especificas
+-- Exemplo 6: COALESCE vs funcoes especificas
 -- ----------------------------------------------------------------------------
 -- Comparando com equivalentes de cada SGBD
 
@@ -117,7 +117,7 @@ SELECT NVL(campo, 'padrao') FROM tabela;
 -- COALESCE e a UNICA que aceita multiplos argumentos em todos!
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 7: Em concatenacao
+-- Exemplo 7: Em concatenacao
 -- ----------------------------------------------------------------------------
 -- Montando strings sem NULL
 
@@ -132,7 +132,7 @@ SELECT
 FROM pessoas;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 8: Com subqueries
+-- Exemplo 8: Com subqueries
 -- ----------------------------------------------------------------------------
 -- Valor padrao quando subquery retorna NULL
 
@@ -145,7 +145,7 @@ SELECT
 FROM produtos p;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 9: Em UPDATE
+-- Exemplo 9: Em UPDATE
 -- ----------------------------------------------------------------------------
 -- Definindo valores padrao
 
@@ -155,7 +155,7 @@ SET
 WHERE valor IS NULL;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 10: Priorizando fontes de dados
+-- Exemplo 10: Priorizando fontes de dados
 -- ----------------------------------------------------------------------------
 -- Exemplo pratico: obtendo preco mais recente
 
@@ -170,7 +170,7 @@ SELECT
 FROM produtos;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 11: Tratando datas
+-- Exemplo 11: Tratando datas
 -- ----------------------------------------------------------------------------
 -- Usando data padrao quando NULL
 
