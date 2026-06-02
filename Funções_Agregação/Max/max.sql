@@ -2,24 +2,24 @@
 -- FUNÇÃO: MAX
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A função MAX retorna o maior valor de uma coluna.
 -- Funciona com números, textos (ordem alfabética) e datas.
 -- Ignora valores NULL.
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- SELECT MAX(coluna) FROM tabela;
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Maior valor numérico
+-- Exemplo 1: Maior valor numérico
 -- ============================================
 -- Produto mais caro
 SELECT MAX(preco) AS maior_preco FROM produtos;
 
 -- ============================================
--- EXEMPLO 2: MAX com WHERE
+-- Exemplo 2: MAX com WHERE
 -- ============================================
 -- Maior preço de eletrônicos
 SELECT MAX(preco) AS maior_preco_eletronico
@@ -32,7 +32,7 @@ FROM pedidos
 WHERE YEAR(data_pedido) = YEAR(CURDATE());
 
 -- ============================================
--- EXEMPLO 3: MAX com datas
+-- Exemplo 3: MAX com datas
 -- ============================================
 -- Data do último pedido
 SELECT MAX(data_pedido) AS ultimo_pedido
@@ -50,7 +50,7 @@ FROM logs_atividade
 GROUP BY usuario_id;
 
 -- ============================================
--- EXEMPLO 4: MAX com strings (alfabético)
+-- Exemplo 4: MAX com strings (alfabético)
 -- ============================================
 -- Último nome alfabeticamente
 SELECT MAX(nome) AS ultimo_nome
@@ -58,7 +58,7 @@ FROM clientes;
 -- 'Zélia' vem depois de 'Ana'
 
 -- ============================================
--- EXEMPLO 5: MAX com GROUP BY
+-- Exemplo 5: MAX com GROUP BY
 -- ============================================
 -- Maior preço por categoria
 SELECT 
@@ -75,7 +75,7 @@ FROM pedidos
 GROUP BY cliente_id;
 
 -- ============================================
--- EXEMPLO 6: Encontrar o registro com maior valor
+-- Exemplo 6: Encontrar o registro com maior valor
 -- ============================================
 -- Produto mais caro (registro completo)
 SELECT * FROM produtos
@@ -87,7 +87,7 @@ ORDER BY preco DESC
 LIMIT 1;
 
 -- ============================================
--- EXEMPLO 7: TOP N por categoria
+-- Exemplo 7: TOP N por categoria
 -- ============================================
 -- Produto mais caro de cada categoria
 SELECT p1.* FROM produtos p1
@@ -98,7 +98,7 @@ WHERE p1.preco = (
 );
 
 -- ============================================
--- EXEMPLO 8: MAX para encontrar recorde
+-- Exemplo 8: MAX para encontrar recorde
 -- ============================================
 -- Recorde de vendas diárias
 SELECT 
@@ -115,7 +115,7 @@ HAVING SUM(valor_total) = (
 );
 
 -- ============================================
--- EXEMPLO 9: MAX com HAVING
+-- Exemplo 9: MAX com HAVING
 -- ============================================
 -- Categorias onde o maior preço é abaixo de R$ 1000
 SELECT categoria, MAX(preco) AS maior_preco
@@ -124,7 +124,7 @@ GROUP BY categoria
 HAVING MAX(preco) < 1000;
 
 -- ============================================
--- EXEMPLO 10: Estatísticas completas
+-- Exemplo 10: Estatísticas completas
 -- ============================================
 SELECT 
     categoria,
@@ -137,7 +137,7 @@ FROM produtos
 GROUP BY categoria;
 
 -- ============================================
--- EXEMPLO 11: MAX por período
+-- Exemplo 11: MAX por período
 -- ============================================
 -- Maior venda por mês
 SELECT 
@@ -148,7 +148,7 @@ GROUP BY DATE_FORMAT(data_pedido, '%Y-%m')
 ORDER BY mes;
 
 -- ============================================
--- EXEMPLO 12: MAX em dashboard
+-- Exemplo 12: MAX em dashboard
 -- ============================================
 SELECT
     MAX(valor_total) AS maior_pedido_historico,
