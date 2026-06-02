@@ -7,20 +7,20 @@
 -- (linhas) em uma tabela do banco de dados.
 -- É um comando DML (Data Manipulation Language).
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- INSERT INTO tabela (coluna1, coluna2, ...)
 -- VALUES (valor1, valor2, ...);
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Inserir especificando colunas
+-- Exemplo 1: Inserir especificando colunas
 -- ============================================
 INSERT INTO clientes (nome, email, cidade)
 VALUES ('João Silva', 'joao@email.com', 'São Paulo');
 
 -- ============================================
--- EXEMPLO 2: Inserir sem especificar colunas
+-- Exemplo 2: Inserir sem especificar colunas
 -- ============================================
 -- Deve fornecer valores para TODAS as colunas na ordem correta
 -- Não recomendado - pode quebrar se a estrutura mudar
@@ -28,7 +28,7 @@ INSERT INTO clientes
 VALUES (1, 'Maria Santos', 'maria@email.com', 'Rio de Janeiro');
 
 -- ============================================
--- EXEMPLO 3: Inserir múltiplos registros
+-- Exemplo 3: Inserir múltiplos registros
 -- ============================================
 INSERT INTO produtos (nome, preco, estoque) VALUES
     ('Notebook Dell', 3500.00, 10),
@@ -37,7 +37,7 @@ INSERT INTO produtos (nome, preco, estoque) VALUES
     ('Monitor 24"', 899.00, 15);
 
 -- ============================================
--- EXEMPLO 4: Inserir com valores padrão
+-- Exemplo 4: Inserir com valores padrão
 -- ============================================
 -- Se a coluna tem DEFAULT, pode omiti-la
 INSERT INTO usuarios (username, email)
@@ -49,13 +49,13 @@ INSERT INTO usuarios (username, email, status)
 VALUES ('maria456', 'maria@email.com', DEFAULT);
 
 -- ============================================
--- EXEMPLO 5: Inserir com NULL
+-- Exemplo 5: Inserir com NULL
 -- ============================================
 INSERT INTO clientes (nome, email, telefone)
 VALUES ('Carlos Souza', 'carlos@email.com', NULL);
 
 -- ============================================
--- EXEMPLO 6: Inserir dados de outra tabela
+-- Exemplo 6: Inserir dados de outra tabela
 -- ============================================
 -- Copia dados de uma tabela para outra
 INSERT INTO clientes_backup (nome, email, cidade)
@@ -64,7 +64,7 @@ FROM clientes
 WHERE ativo = TRUE;
 
 -- ============================================
--- EXEMPLO 7: Inserir com SELECT completo
+-- Exemplo 7: Inserir com SELECT completo
 -- ============================================
 INSERT INTO relatorio_vendas (produto, quantidade_vendida, total)
 SELECT 
@@ -76,7 +76,7 @@ INNER JOIN itens_pedido ip ON p.id = ip.produto_id
 GROUP BY p.nome;
 
 -- ============================================
--- EXEMPLO 8: INSERT com RETURNING (PostgreSQL)
+-- Exemplo 8: INSERT com RETURNING (PostgreSQL)
 -- ============================================
 -- Retorna os dados inseridos (útil para pegar ID gerado)
 INSERT INTO clientes (nome, email)
@@ -84,14 +84,14 @@ VALUES ('Ana Costa', 'ana@email.com')
 RETURNING id, nome;
 
 -- ============================================
--- EXEMPLO 9: INSERT IGNORE (MySQL)
+-- Exemplo 9: INSERT IGNORE (MySQL)
 -- ============================================
 -- Ignora o INSERT se violar constraint (ex: UNIQUE)
 INSERT IGNORE INTO clientes (email, nome)
 VALUES ('joao@email.com', 'João Duplicado');
 
 -- ============================================
--- EXEMPLO 10: INSERT ON DUPLICATE KEY UPDATE (MySQL)
+-- Exemplo 10: INSERT ON DUPLICATE KEY UPDATE (MySQL)
 -- ============================================
 -- Se já existe (violação de UNIQUE/PRIMARY), atualiza
 INSERT INTO produtos (codigo, nome, preco, estoque)
@@ -101,7 +101,7 @@ ON DUPLICATE KEY UPDATE
     estoque = estoque + VALUES(estoque);
 
 -- ============================================
--- EXEMPLO 11: INSERT ON CONFLICT (PostgreSQL)
+-- Exemplo 11: INSERT ON CONFLICT (PostgreSQL)
 -- ============================================
 -- Similar ao ON DUPLICATE KEY do MySQL
 INSERT INTO produtos (codigo, nome, preco)
