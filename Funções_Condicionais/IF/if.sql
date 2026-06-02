@@ -2,20 +2,20 @@
 -- IF - Condicional Simples (MySQL)
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- Descrição:
 -- A funcao IF() e uma funcao condicional do MySQL que retorna um valor se a
 -- condicao for verdadeira e outro valor se for falsa. E equivalente ao
 -- operador ternario de linguagens de programacao.
 --
--- SINTAXE BASICA:
+-- Sintaxe básica:
 -- IF(condicao, valor_se_verdadeiro, valor_se_falso)
 --
--- PARAMETROS:
+-- Parâmetros:
 -- - condicao : Expressao que sera avaliada como TRUE ou FALSE
 -- - valor_se_verdadeiro : Retornado quando condicao = TRUE
 -- - valor_se_falso : Retornado quando condicao = FALSE ou NULL
 --
--- COMPATIBILIDADE:
+-- Compatibilidade:
 -- - MySQL: IF(cond, true_val, false_val)
 -- - SQL Server: IIF(cond, true_val, false_val)
 -- - PostgreSQL: Nao tem IF, use CASE
@@ -24,7 +24,7 @@
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 1: Uso basico
+-- Exemplo 1: Uso basico
 -- ----------------------------------------------------------------------------
 -- Verificando se valor e positivo
 
@@ -41,7 +41,7 @@ FROM transacoes;
 -- | 0     | Negativo ou Zero   |
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 2: Verificando disponibilidade
+-- Exemplo 2: Verificando disponibilidade
 -- ----------------------------------------------------------------------------
 -- Status de estoque
 
@@ -52,7 +52,7 @@ SELECT
 FROM produtos;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 3: Calculo condicional
+-- Exemplo 3: Calculo condicional
 -- ----------------------------------------------------------------------------
 -- Aplicando desconto baseado em condicao
 
@@ -63,7 +63,7 @@ SELECT
 FROM pedidos;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 4: IF aninhado
+-- Exemplo 4: IF aninhado
 -- ----------------------------------------------------------------------------
 -- Multiplas condicoes (semelhante a if-else-if)
 
@@ -85,7 +85,7 @@ SELECT
 FROM alunos;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 5: IF com agregacao
+-- Exemplo 5: IF com agregacao
 -- ----------------------------------------------------------------------------
 -- Contagem condicional
 
@@ -102,7 +102,7 @@ SELECT
 FROM usuarios;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 6: SQL Server - IIF
+-- Exemplo 6: SQL Server - IIF
 -- ----------------------------------------------------------------------------
 -- Funcao equivalente no SQL Server
 
@@ -115,7 +115,7 @@ FROM transacoes;
 -- Sintaxe identica ao IF do MySQL
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 7: IF com NULL
+-- Exemplo 7: IF com NULL
 -- ----------------------------------------------------------------------------
 -- Tratando valores nulos
 
@@ -132,7 +132,7 @@ SELECT
 FROM clientes;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 8: IF em UPDATE
+-- Exemplo 8: IF em UPDATE
 -- ----------------------------------------------------------------------------
 -- Atualizacao condicional
 
@@ -140,7 +140,7 @@ UPDATE produtos
 SET preco = IF(categoria = 'promocao', preco * 0.8, preco);
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 9: IF para formatacao
+-- Exemplo 9: IF para formatacao
 -- ----------------------------------------------------------------------------
 -- Formatando saida baseada em condicao
 
