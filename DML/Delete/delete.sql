@@ -2,7 +2,7 @@
 -- Comando: Delete
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- O comando DELETE é usado para remover registros (linhas)
 -- de uma tabela. Diferente do DROP, DELETE mantém a
 -- estrutura da tabela intacta.
