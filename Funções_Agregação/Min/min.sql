@@ -2,24 +2,24 @@
 -- FUNÇÃO: MIN
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A função MIN retorna o menor valor de uma coluna.
 -- Funciona com números, textos (ordem alfabética) e datas.
 -- Ignora valores NULL.
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- SELECT MIN(coluna) FROM tabela;
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Menor valor numérico
+-- Exemplo 1: Menor valor numérico
 -- ============================================
 -- Produto mais barato
 SELECT MIN(preco) AS menor_preco FROM produtos;
 
 -- ============================================
--- EXEMPLO 2: MIN com WHERE
+-- Exemplo 2: MIN com WHERE
 -- ============================================
 -- Menor preço de eletrônicos
 SELECT MIN(preco) AS menor_preco_eletronico
@@ -32,7 +32,7 @@ FROM pedidos
 WHERE YEAR(data_pedido) = YEAR(CURDATE());
 
 -- ============================================
--- EXEMPLO 3: MIN com datas
+-- Exemplo 3: MIN com datas
 -- ============================================
 -- Data do primeiro pedido
 SELECT MIN(data_pedido) AS primeiro_pedido
@@ -43,7 +43,7 @@ SELECT MIN(data_cadastro) AS cliente_mais_antigo
 FROM clientes;
 
 -- ============================================
--- EXEMPLO 4: MIN com strings (alfabético)
+-- Exemplo 4: MIN com strings (alfabético)
 -- ============================================
 -- Primeiro nome alfabeticamente
 SELECT MIN(nome) AS primeiro_nome
@@ -51,7 +51,7 @@ FROM clientes;
 -- 'Ana' vem antes de 'Zélia'
 
 -- ============================================
--- EXEMPLO 5: MIN com GROUP BY
+-- Exemplo 5: MIN com GROUP BY
 -- ============================================
 -- Menor preço por categoria
 SELECT 
@@ -68,7 +68,7 @@ FROM pedidos
 GROUP BY cliente_id;
 
 -- ============================================
--- EXEMPLO 6: Encontrar o registro com menor valor
+-- Exemplo 6: Encontrar o registro com menor valor
 -- ============================================
 -- Produto mais barato (registro completo)
 SELECT * FROM produtos
@@ -80,7 +80,7 @@ ORDER BY preco ASC
 LIMIT 1;
 
 -- ============================================
--- EXEMPLO 7: MIN com múltiplas métricas
+-- Exemplo 7: MIN com múltiplas métricas
 -- ============================================
 SELECT 
     categoria,
@@ -92,7 +92,7 @@ FROM produtos
 GROUP BY categoria;
 
 -- ============================================
--- EXEMPLO 8: MIN em subquery
+-- Exemplo 8: MIN em subquery
 -- ============================================
 -- Pedidos do dia com menor volume de vendas
 SELECT * FROM pedidos
@@ -105,7 +105,7 @@ WHERE DATE(data_pedido) = (
 );
 
 -- ============================================
--- EXEMPLO 9: MIN com HAVING
+-- Exemplo 9: MIN com HAVING
 -- ============================================
 -- Categorias onde o menor preço é acima de R$ 50
 SELECT categoria, MIN(preco) AS menor_preco
@@ -114,7 +114,7 @@ GROUP BY categoria
 HAVING MIN(preco) > 50;
 
 -- ============================================
--- EXEMPLO 10: MIN por período
+-- Exemplo 10: MIN por período
 -- ============================================
 -- Menor venda por mês
 SELECT 
@@ -126,7 +126,7 @@ GROUP BY DATE_FORMAT(data_pedido, '%Y-%m')
 ORDER BY mes;
 
 -- ============================================
--- EXEMPLO 11: Primeiro e último registro
+-- Exemplo 11: Primeiro e último registro
 -- ============================================
 SELECT 
     MIN(data_cadastro) AS primeiro_cadastro,
@@ -135,7 +135,7 @@ SELECT
 FROM clientes;
 
 -- ============================================
--- EXEMPLO 12: MIN com COALESCE
+-- Exemplo 12: MIN com COALESCE
 -- ============================================
 -- Se não houver valores, retorna um padrão
 SELECT COALESCE(MIN(preco), 0) AS menor_preco
