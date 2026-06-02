@@ -9,7 +9,7 @@
 -- É um comando DML (Data Manipulation Language).
 --
 -- Sintaxe básica:
--- SELECT coluna1, coluna2, ...
+-- SELECT coluna1, coluna2, coluna3, ...
 -- FROM tabela
 -- [WHERE condição]
 -- [ORDER BY coluna];
