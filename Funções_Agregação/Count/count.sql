@@ -2,29 +2,29 @@
 -- FUNÇÃO: COUNT
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A função COUNT retorna o número de linhas que correspondem
 -- a um critério especificado. É a função de agregação mais
 -- básica e frequentemente utilizada.
 --
--- VARIAÇÕES:
+-- Variações:
 -- COUNT(*) - Conta TODAS as linhas (incluindo NULL)
 -- COUNT(coluna) - Conta linhas onde a coluna NÃO é NULL
 -- COUNT(DISTINCT coluna) - Conta valores únicos (não NULL)
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- SELECT COUNT(*) FROM tabela;
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Contar todas as linhas
+-- Exemplo 1: Contar todas as linhas
 -- ============================================
 -- Total de clientes na tabela
 SELECT COUNT(*) AS total_clientes FROM clientes;
 
 -- ============================================
--- EXEMPLO 2: COUNT com WHERE
+-- Exemplo 2: COUNT com WHERE
 -- ============================================
 -- Total de clientes ativos
 SELECT COUNT(*) AS clientes_ativos
@@ -37,7 +37,7 @@ FROM pedidos
 WHERE MONTH(data_pedido) = MONTH(CURDATE());
 
 -- ============================================
--- EXEMPLO 3: COUNT(coluna) - ignora NULL
+-- Exemplo 3: COUNT(coluna) - ignora NULL
 -- ============================================
 -- Conta apenas linhas onde telefone NÃO é NULL
 SELECT COUNT(telefone) AS clientes_com_telefone
@@ -51,7 +51,7 @@ SELECT
 FROM clientes;
 
 -- ============================================
--- EXEMPLO 4: COUNT(DISTINCT) - valores únicos
+-- Exemplo 4: COUNT(DISTINCT) - valores únicos
 -- ============================================
 -- Quantas cidades diferentes têm clientes
 SELECT COUNT(DISTINCT cidade) AS total_cidades
@@ -62,7 +62,7 @@ SELECT COUNT(DISTINCT cliente_id) AS clientes_compradores
 FROM pedidos;
 
 -- ============================================
--- EXEMPLO 5: COUNT com GROUP BY
+-- Exemplo 5: COUNT com GROUP BY
 -- ============================================
 -- Quantidade de clientes por cidade
 SELECT cidade, COUNT(*) AS total
@@ -76,7 +76,7 @@ FROM produtos
 GROUP BY categoria;
 
 -- ============================================
--- EXEMPLO 6: COUNT com HAVING
+-- Exemplo 6: COUNT com HAVING
 -- ============================================
 -- Cidades com mais de 100 clientes
 SELECT cidade, COUNT(*) AS total
@@ -85,7 +85,7 @@ GROUP BY cidade
 HAVING COUNT(*) > 100;
 
 -- ============================================
--- EXEMPLO 7: COUNT com JOIN
+-- Exemplo 7: COUNT com JOIN
 -- ============================================
 -- Total de pedidos por cliente
 SELECT 
@@ -96,7 +96,7 @@ LEFT JOIN pedidos p ON c.id = p.cliente_id
 GROUP BY c.id, c.nome;
 
 -- ============================================
--- EXEMPLO 8: Múltiplos COUNT na mesma query
+-- Exemplo 8: Múltiplos COUNT na mesma query
 -- ============================================
 SELECT 
     COUNT(*) AS total_produtos,
@@ -106,7 +106,7 @@ SELECT
 FROM produtos;
 
 -- ============================================
--- EXEMPLO 9: COUNT em subquery
+-- Exemplo 9: COUNT em subquery
 -- ============================================
 -- Clientes com mais de 5 pedidos
 SELECT * FROM clientes c
@@ -116,7 +116,7 @@ WHERE (
 ) > 5;
 
 -- ============================================
--- EXEMPLO 10: COUNT com condição (condicional)
+-- Exemplo 10: COUNT com condição (condicional)
 -- ============================================
 -- Contar por condições diferentes
 SELECT
@@ -126,7 +126,7 @@ SELECT
 FROM produtos;
 
 -- ============================================
--- EXEMPLO 11: COUNT por período
+-- Exemplo 11: COUNT por período
 -- ============================================
 -- Pedidos por mês
 SELECT 
@@ -138,7 +138,7 @@ GROUP BY YEAR(data_pedido), MONTH(data_pedido)
 ORDER BY ano, mes;
 
 -- ============================================
--- EXEMPLO 12: Verificar se existe pelo menos um
+-- Exemplo 12: Verificar se existe pelo menos um
 -- ============================================
 -- Forma simples de verificar existência
 SELECT 
