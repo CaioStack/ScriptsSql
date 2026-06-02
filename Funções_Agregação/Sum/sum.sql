@@ -2,23 +2,23 @@
 -- FUNÇÃO: SUM
 -- ============================================
 -- 
--- DESCRIÇÃO:
+-- Descrição:
 -- A função SUM retorna a soma total de uma coluna numérica.
 -- Ignora valores NULL automaticamente.
 --
--- SINTAXE BÁSICA:
+-- Sintaxe básica:
 -- SELECT SUM(coluna) FROM tabela;
 --
 -- ============================================
 
 -- ============================================
--- EXEMPLO 1: Soma simples
+-- Exemplo 1: Soma simples
 -- ============================================
 -- Total de estoque de todos os produtos
 SELECT SUM(estoque) AS estoque_total FROM produtos;
 
 -- ============================================
--- EXEMPLO 2: SUM com WHERE
+-- Exemplo 2: SUM com WHERE
 -- ============================================
 -- Valor total de pedidos do mês
 SELECT SUM(valor_total) AS vendas_mes
@@ -31,7 +31,7 @@ FROM produtos
 WHERE categoria = 'Eletrônicos';
 
 -- ============================================
--- EXEMPLO 3: SUM com GROUP BY
+-- Exemplo 3: SUM com GROUP BY
 -- ============================================
 -- Vendas por categoria
 SELECT 
@@ -51,7 +51,7 @@ GROUP BY c.id, c.nome
 ORDER BY total_gasto DESC;
 
 -- ============================================
--- EXEMPLO 4: SUM com HAVING
+-- Exemplo 4: SUM com HAVING
 -- ============================================
 -- Clientes que gastaram mais de R$ 10.000
 SELECT 
@@ -63,7 +63,7 @@ GROUP BY c.id, c.nome
 HAVING SUM(p.valor_total) > 10000;
 
 -- ============================================
--- EXEMPLO 5: SUM com expressões
+-- Exemplo 5: SUM com expressões
 -- ============================================
 -- Valor total dos itens (preço * quantidade)
 SELECT SUM(preco_unitario * quantidade) AS valor_total
@@ -74,7 +74,7 @@ SELECT SUM(preco_unitario * quantidade * (1 - desconto/100)) AS valor_com_descon
 FROM itens_pedido;
 
 -- ============================================
--- EXEMPLO 6: Múltiplos SUM na mesma query
+-- Exemplo 6: Múltiplos SUM na mesma query
 -- ============================================
 SELECT 
     SUM(valor_total) AS total_vendas,
@@ -83,14 +83,14 @@ SELECT
 FROM pedidos;
 
 -- ============================================
--- EXEMPLO 7: SUM com DISTINCT
+-- Exemplo 7: SUM com DISTINCT
 -- ============================================
 -- Soma apenas valores únicos
 SELECT SUM(DISTINCT preco) AS soma_precos_unicos
 FROM produtos;
 
 -- ============================================
--- EXEMPLO 8: SUM em subquery
+-- Exemplo 8: SUM em subquery
 -- ============================================
 -- Clientes com compras acima da média
 SELECT * FROM clientes c
@@ -105,7 +105,7 @@ WHERE (
 );
 
 -- ============================================
--- EXEMPLO 9: SUM por período
+-- Exemplo 9: SUM por período
 -- ============================================
 -- Vendas por mês
 SELECT 
@@ -117,7 +117,7 @@ GROUP BY DATE_FORMAT(data_pedido, '%Y-%m')
 ORDER BY mes;
 
 -- ============================================
--- EXEMPLO 10: SUM com COALESCE (tratar NULL)
+-- Exemplo 10: SUM com COALESCE (tratar NULL)
 -- ============================================
 -- Se não houver pedidos, retorna 0 em vez de NULL
 SELECT COALESCE(SUM(valor_total), 0) AS total_vendas
@@ -125,7 +125,7 @@ FROM pedidos
 WHERE cliente_id = 999;  -- Cliente que pode não ter pedidos
 
 -- ============================================
--- EXEMPLO 11: Running Total (soma acumulada)
+-- Exemplo 11: Running Total (soma acumulada)
 -- ============================================
 -- MySQL 8+ / PostgreSQL / SQL Server
 SELECT 
@@ -136,7 +136,7 @@ FROM pedidos
 ORDER BY data_pedido;
 
 -- ============================================
--- EXEMPLO 12: SUM com CASE para métricas
+-- Exemplo 12: SUM com CASE para métricas
 -- ============================================
 -- Dashboard de vendas
 SELECT
