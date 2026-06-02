@@ -2,23 +2,23 @@
 -- IFNULL - Tratamento de Valores NULL (MySQL/MariaDB)
 -- ============================================================================
 -- 
--- DESCRICAO:
+-- Descrição:
 -- A funcao IFNULL() verifica se uma expressao e NULL e retorna um valor
 -- alternativo caso seja. E uma forma simples e direta de substituir valores
 -- nulos por um valor padrao, evitando exibicao de NULL em resultados.
 --
--- SINTAXE BASICA:
+-- Sintaxe básica:
 -- IFNULL(expressao, valor_se_null)
 --
--- PARAMETROS:
+-- Parâmetros:
 -- - expressao : Valor ou coluna a ser verificada
 -- - valor_se_null : Valor retornado se expressao for NULL
 --
--- RETORNO:
+-- Retorno:
 -- - Se expressao NAO for NULL: retorna a propria expressao
 -- - Se expressao FOR NULL: retorna valor_se_null
 --
--- COMPATIBILIDADE:
+-- Compatibilidade:
 -- - MySQL/MariaDB: IFNULL(expr, valor)
 -- - SQL Server: ISNULL(expr, valor)
 -- - PostgreSQL: COALESCE(expr, valor)
@@ -30,7 +30,7 @@
 -- ============================================================================
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 1: Uso basico - Substituindo NULL
+-- Exemplo 1: Uso basico - Substituindo NULL
 -- ----------------------------------------------------------------------------
 -- Exibindo "Nao informado" quando email for NULL
 
@@ -48,7 +48,7 @@ FROM clientes;
 -- | Ana Lima    | ana@email.com    | ana@email.com    |
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 2: Valores numericos
+-- Exemplo 2: Valores numericos
 -- ----------------------------------------------------------------------------
 -- Substituindo NULL por zero em calculos
 
@@ -65,7 +65,7 @@ FROM itens_pedido;
 -- 100 * 2 * (1 - 0) = 200
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 3: Em calculos agregados
+-- Exemplo 3: Em calculos agregados
 -- ----------------------------------------------------------------------------
 -- Somando valores tratando NULL como zero
 
@@ -75,7 +75,7 @@ SELECT
 FROM funcionarios;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 4: Concatenacao segura
+-- Exemplo 4: Concatenacao segura
 -- ----------------------------------------------------------------------------
 -- Evitando que NULL "quebre" a concatenacao
 
@@ -92,7 +92,7 @@ FROM pessoas;
 -- Sem IFNULL, se nome_meio for NULL, todo o CONCAT retorna NULL em alguns SGBDs
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 5: IFNULL com subquery
+-- Exemplo 5: IFNULL com subquery
 -- ----------------------------------------------------------------------------
 -- Valor padrao quando subquery retorna NULL
 
@@ -105,7 +105,7 @@ SELECT
 FROM produtos p;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 6: IFNULL em UPDATE
+-- Exemplo 6: IFNULL em UPDATE
 -- ----------------------------------------------------------------------------
 -- Atualizando apenas valores NULL
 
@@ -118,7 +118,7 @@ UPDATE produtos
 SET estoque_minimo = IFNULL(estoque_minimo, 10);
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 7: IFNULL aninhado
+-- Exemplo 7: IFNULL aninhado
 -- ----------------------------------------------------------------------------
 -- Verificando multiplas colunas em cascata
 
@@ -138,7 +138,7 @@ SELECT
 FROM contatos;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 8: IFNULL com datas
+-- Exemplo 8: IFNULL com datas
 -- ----------------------------------------------------------------------------
 -- Tratando datas nulas
 
@@ -155,7 +155,7 @@ SELECT
 FROM tarefas;
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 9: IFNULL em ORDER BY
+-- Exemplo 9: IFNULL em ORDER BY
 -- ----------------------------------------------------------------------------
 -- Ordenando com tratamento de NULL
 
@@ -166,7 +166,7 @@ ORDER BY IFNULL(data_promocao, '9999-12-31');
 -- NULL vai para o final da ordenacao
 
 -- ----------------------------------------------------------------------------
--- EXEMPLO 10: Comparacao com outras funcoes
+-- Exemplo 10: Comparacao com outras funcoes
 -- ----------------------------------------------------------------------------
 -- IFNULL vs COALESCE vs IF
 
